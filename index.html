@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio & Projects</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #24292e;
+            background-color: #f6f8fa;
+        }
+        h1 {
+            text-align: center;
+            color: #0366d6;
+            margin-bottom: 30px;
+        }
+        h2 {
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 6px;
+            margin-top: 40px;
+            color: #24292e;
+            text-transform: capitalize;
+        }
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .repo-card {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .repo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        .repo-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #0366d6;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .repo-title:hover {
+            text-decoration: underline;
+        }
+        .repo-desc {
+            color: #586069;
+            font-size: 0.9em;
+            margin: 10px 0;
+            flex-grow: 1;
+        }
+        .repo-meta {
+            font-size: 0.8em;
+            color: #6a737d;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .language {
+            background: #f1f8ff;
+            color: #0366d6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .topic-tag {
+            background: #eaecef;
+            color: #24292e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Projects Portfolio</h1>
+    <div id="portfolio-container">Loading repositories by field...</div>
+
+    <script>
+
+        const username = 'thibdrv';
+
+        async function fetchCategorizedRepos() {
+            const container = document.getElementById('portfolio-container');
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+                if (!response.ok) throw new Error('Failed to fetch repositories');
+                
+                const repos = await response.json();
+                const originalRepos = repos.filter(repo => !repo.fork);
+
+                if (originalRepos.length === 0) {
+                    container.innerHTML = '<p>No repositories found.</p>';
+                    return;
+                }
+
+                const categories = {};
+                
+                originalRepos.forEach(repo => {
+                    // Look at GitHub topics to categorize, or use default category
+                    let category = 'Other Projects';
+                    if (repo.topics && repo.topics.length > 0) {
+                        // Takes the first topic as the main category, and cleans formatting
+                        category = repo.topics[0].replace(/-/g, ' ');
+                    }
+
+                    if (!categories[category]) {
+                        categories[category] = [];
+                    }
+                    categories[category].push(repo);
+                });
+
+                container.innerHTML = '';
+
+                // Render each category section
+                for (const [categoryName, repoList] of Object.entries(categories)) {
+                    const section = document.createElement('div');
+                    
+                    const heading = document.createElement('h2');
+                    heading.textContent = categoryName;
+                    section.appendChild(heading);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'repo-grid';
+
+                    repoList.forEach(repo => {
+                        const card = document.createElement('div');
+                        card.className = 'repo-card';
+                        
+                        const description = repo.description ? repo.description : 'No description provided.';
+                        const language = repo.language ? `<span class="language">${repo.language}</span>` : '';
+                        const topics = repo.topics ? repo.topics.map(t => `<span class="topic-tag">${t}</span>`).join(' ') : '';
+                        
+                        card.innerHTML = `
+                            <div>
+                                <a class="repo-title" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                                <p class="repo-desc">${description}</p>
+                            </div>
+                            <div>
+                                <div style="margin-bottom: 8px;">${topics}</div>
+                                <div class="repo-meta">
+                                    ${language} 
+                                    <span>⭐ ${repo.stargazers_count}</span>
+                                </div>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+
+            } catch (error) {
+                container.innerHTML = `<p style="color: red;">Error loading repositories: ${error.message}</p>`;
+            }
+        }
+
+        fetchCategorizedRepos();
+    </script>
+
+</body>
+</html>
