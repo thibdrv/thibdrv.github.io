@@ -1,178 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio & Projects</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #24292e;
-            background-color: #f6f8fa;
-        }
-        h1 {
-            text-align: center;
-            color: #0366d6;
-            margin-bottom: 30px;
-        }
-        h2 {
-            border-bottom: 2px solid #e1e4e8;
-            padding-bottom: 6px;
-            margin-top: 40px;
-            color: #24292e;
-            text-transform: capitalize;
-        }
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-            margin-top: 16px;
-        }
-        .repo-card {
-            background: #ffffff;
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-            padding: 16px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .repo-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-        }
-        .repo-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #0366d6;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        .repo-title:hover {
-            text-decoration: underline;
-        }
-        .repo-desc {
-            color: #586069;
-            font-size: 0.9em;
-            margin: 10px 0;
-            flex-grow: 1;
-        }
-        .repo-meta {
-            font-size: 0.8em;
-            color: #6a737d;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .language {
-            background: #f1f8ff;
-            color: #0366d6;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-        .topic-tag {
-            background: #eaecef;
-            color: #24292e;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.75em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thibaud Derville — Web Developer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Thibaud Derville&nbsp;: former paratrooper, web developer and data analyst.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f4f3ef">
+  <!-- Link preview (LinkedIn, WhatsApp...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thibaud Derville">
+  <meta property="og:title" content="Thibaud Derville — Web Developer &amp; Data Analyst">
+  <meta property="og:description" content="Portfolio of Thibaud Derville, former paratrooper, web developer and data analyst.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://thibdrv.github.io/">
+  <meta property="og:image" content="https://thibdrv.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://thibdrv.github.io/assets/og-image.jpg">
+  <link rel="canonical" href="https://thibdrv.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <h1>My Projects Portfolio</h1>
-    <div id="portfolio-container">Loading repositories by field...</div>
+  <header class="header" id="header">
+    <a href="#accueil" class="logo">THIBAUD DERVILLE</a>
+    <div class="header__menu" id="site-menu">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#parcours" data-i18n="nav.path">About</a>
+      <a href="#projets" data-i18n="nav.projects">Projects</a>
+      <a href="cv.html" data-i18n="nav.cv">CV</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <!-- LinkedIn / GitHub shortcuts (generated from SOCIALS in js/projects.js) -->
+    <div class="social" id="header-social" role="group" aria-label="Social links"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="el" lang="el" aria-pressed="false">EL</button>
+    </div>
+    </div>
+    <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  </header>
 
-    <script>
+  <main>
 
-        const username = 'thibdrv';
+    <!-- HOME -->
+    <section class="hero" id="accueil">
+      <div class="hero__card">
+        <img class="hero__photo" src="assets/photo-thibaud.jpg" alt="Thibaud Derville" width="600" height="800" fetchpriority="high">
 
-        async function fetchCategorizedRepos() {
-            const container = document.getElementById('portfolio-container');
-            try {
-                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
-                if (!response.ok) throw new Error('Failed to fetch repositories');
-                
-                const repos = await response.json();
-                const originalRepos = repos.filter(repo => !repo.fork);
+        <div class="hero__main">
+        <div class="hero__content">
+          <p class="eyebrow reveal" data-i18n="hero.hey">Hey, I’m Thibaud</p>
+          <h1 class="hero__title">
+            <span class="line"><span class="line__inner" data-i18n="hero.line1">Web Developer</span></span>
+            <span class="line"><span class="line__inner" data-i18n-html="hero.line2"><em>&amp;</em> Data Analyst</span></span>
+          </h1>
+        </div>
+        <div class="hero__aside">
+          <p class="hero__tagline reveal" data-i18n="hero.tagline">From the field to code and data.</p>
+          <p class="hero__text reveal" data-i18n="hero.text">
+            Six years in the French Army, from parachuting to leading a team, before turning to my passion&nbsp;&nbsp;: technology. I bring the rigor of the field to the precision of code and data.
+          </p>
+          <a href="#projets" class="hero__cta reveal">
+            <span data-i18n="hero.cta">Discover my projects</span>
+            <span class="hero__cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        </div>
 
-                if (originalRepos.length === 0) {
-                    container.innerHTML = '<p>No repositories found.</p>';
-                    return;
-                }
+        <ol class="hero__points">
+          <li class="reveal"><b>#01</b><span data-i18n="hero.p1">Web development</span></li>
+          <li class="reveal"><b>#02</b><span data-i18n="hero.p2">Data analysis</span></li>
+          <li class="reveal"><b>#03</b><span data-i18n="hero.p3">Automation &amp; AI</span></li>
+          <li class="reveal"><b>#04</b><span data-i18n="hero.p4">Team leadership</span></li>
+        </ol>
+      </div>
 
-                const categories = {};
-                
-                originalRepos.forEach(repo => {
-                    // Look at GitHub topics to categorize, or use default category
-                    let category = 'Other Projects';
-                    if (repo.topics && repo.topics.length > 0) {
-                        // Takes the first topic as the main category, and cleans formatting
-                        category = repo.topics[0].replace(/-/g, ' ');
-                    }
+      <div class="hero__stack reveal">
+        <span class="hero__stack-label" data-i18n="hero.stack">Tools I work with</span>
+        <ul>
+          <li>PHP</li><li>Python</li><li>JavaScript</li><li>SQL</li><li>Power BI</li><li>pandas</li><li>Streamlit</li><li>Claude</li>
+        </ul>
+      </div>
+    </section>
 
-                    if (!categories[category]) {
-                        categories[category] = [];
-                    }
-                    categories[category].push(repo);
-                });
+    <!-- BACKGROUND -->
+    <section class="section section--dark" id="parcours">
+      <div class="section__head">
+        <span class="section__index reveal">01</span>
+        <h2 class="section__title reveal" data-i18n="path.title">About me</h2>
+      </div>
 
-                container.innerHTML = '';
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__period" data-i18n="path.army.period">6 years</span>
+          <div class="timeline__body">
+            <h3 data-i18n="path.army.title">French Army — Paratrooper, Team Leader</h3>
+            <p class="timeline__place">Carcassonne</p>
+            <p class="timeline__text" data-i18n="path.army.text">Six years of service as a paratrooper, then team leader. I worked in Africa and in the French overseas territories, in international settings&nbsp;&nbsp;: discipline, responsibility, stress management and team cohesion.</p>
+          </div>
+        </li>
 
-                // Render each category section
-                for (const [categoryName, repoList] of Object.entries(categories)) {
-                    const section = document.createElement('div');
-                    
-                    const heading = document.createElement('h2');
-                    heading.textContent = categoryName;
-                    section.appendChild(heading);
+        <li class="timeline__item reveal">
+          <span class="timeline__period" data-i18n="path.bts.period">New beginning</span>
+          <div class="timeline__body">
+            <h3 data-i18n="path.bts.title">Associate Degree in Web Development</h3>
+            <p class="timeline__place" data-i18n="path.bts.place">Toulouse</p>
+            <p class="timeline__text" data-i18n="path.bts.text">Where my career in tech began&nbsp;&nbsp;: a comprehensive training in designing, building and securing web applications.</p>
+            <div class="skills">
+              <span class="skills__label" data-i18n="path.skills.label">Skills acquired</span>
+              <ul class="skills__list" data-i18n-list="path.bts.skills">
+                <li>Full-stack development</li><li>Kanban</li><li>Agile methods</li><li>System architecture</li><li>Web security</li><li>GDPR</li>
+              </ul>
+            </div>
+          </div>
+        </li>
 
-                    const grid = document.createElement('div');
-                    grid.className = 'repo-grid';
+        <li class="timeline__item reveal">
+          <span class="timeline__period" data-i18n="path.bachelor.period">Further studies</span>
+          <div class="timeline__body">
+            <h3 data-i18n="path.bachelor.title">Bachelor in Data Analysis</h3>
+            <p class="timeline__place" data-i18n="path.bachelor.place">Paris</p>
+            <p class="timeline__text" data-i18n="path.bachelor.text">A data-focused degree built on statistical rigor&nbsp;&nbsp;: collecting, cleaning, analysing and visualising data to turn it into clear insights that support decision-making.</p>
+            <div class="skills">
+              <span class="skills__label" data-i18n="path.skills.label">Skills acquired</span>
+              <ul class="skills__list" data-i18n-list="path.bachelor.skills">
+                <li>Descriptive &amp; inferential statistics</li><li>Machine learning</li><li>SQL</li><li>Power BI</li><li>Python</li><li>Seaborn</li><li>Matplotlib</li><li>Geomatics</li>
+              </ul>
+            </div>
+          </div>
+        </li>
 
-                    repoList.forEach(repo => {
-                        const card = document.createElement('div');
-                        card.className = 'repo-card';
-                        
-                        const description = repo.description ? repo.description : 'No description provided.';
-                        const language = repo.language ? `<span class="language">${repo.language}</span>` : '';
-                        const topics = repo.topics ? repo.topics.map(t => `<span class="topic-tag">${t}</span>`).join(' ') : '';
-                        
-                        card.innerHTML = `
-                            <div>
-                                <a class="repo-title" href="${repo.html_url}" target="_blank">${repo.name}</a>
-                                <p class="repo-desc">${description}</p>
-                            </div>
-                            <div>
-                                <div style="margin-bottom: 8px;">${topics}</div>
-                                <div class="repo-meta">
-                                    ${language} 
-                                    <span>⭐ ${repo.stargazers_count}</span>
-                                </div>
-                            </div>
-                        `;
-                        grid.appendChild(card);
-                    });
+        <li class="timeline__item timeline__item--current reveal">
+          <span class="timeline__period" data-i18n="path.now.period">Today</span>
+          <div class="timeline__body">
+            <h3 data-i18n="path.now.title">Always learning</h3>
+            <p class="timeline__place" data-i18n="path.now.place">Ongoing</p>
+            <p class="timeline__text" data-i18n="path.now.text">Always in learning mode&nbsp;&nbsp;: I love to learn, I am curious about every new technology and I always want to know more. I grow through hands-on projects, gathered below.</p>
+            <div class="skills">
+              <span class="skills__label" data-i18n="path.now.skills.label">Currently learning</span>
+              <ul class="skills__list" data-i18n-list="path.now.skills">
+                <li>Agentic AI</li><li>Claude</li><li>Local LLMs</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-                    section.appendChild(grid);
-                    container.appendChild(section);
-                }
+    <!-- STRENGTHS -->
+    <section class="section section--compact" id="qualites">
+      <h3 class="subhead subhead--first reveal" data-i18n="values.title">Strengths</h3>
+      <ul class="strengths reveal" id="strengths">
+        <li class="strength" tabindex="0">
+          <span class="strength__num">01</span>
+          <span class="strength__word" data-i18n="values.rigor">Rigor</span>
+          <p class="strength__desc" data-i18n="values.rigor.desc">Precise, disciplined work, from field operations to clean code.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">02</span>
+          <span class="strength__word" data-i18n="values.team">Team spirit</span>
+          <p class="strength__desc" data-i18n="values.team.desc">Team leader&nbsp;: I know how to bring out the best in a group.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">03</span>
+          <span class="strength__word" data-i18n="values.leadership">Leadership</span>
+          <p class="strength__desc" data-i18n="values.leadership.desc">Six years leading a team in demanding environments.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">04</span>
+          <span class="strength__word" data-i18n="values.curiosity">Technical curiosity</span>
+          <p class="strength__desc" data-i18n="values.curiosity.desc">Always testing new tools, from agentic AI to local LLMs.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">05</span>
+          <span class="strength__word" data-i18n="values.adaptability">Adaptability</span>
+          <p class="strength__desc" data-i18n="values.adaptability.desc">Africa, overseas territories, new countries&nbsp;: I adapt fast.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">06</span>
+          <span class="strength__word" data-i18n="values.resilience">Resilience</span>
+          <p class="strength__desc" data-i18n="values.resilience.desc">Used to pressure, I keep a clear head when it counts.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">07</span>
+          <span class="strength__word" data-i18n="values.autonomy">Autonomy</span>
+          <p class="strength__desc" data-i18n="values.autonomy.desc">I take initiative and carry a project from idea to deployment.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">08</span>
+          <span class="strength__word" data-i18n="values.responsibility">Sense of responsibility</span>
+          <p class="strength__desc" data-i18n="values.responsibility.desc">I own my work and stand behind the results.</p>
+        </li>
+      </ul>
 
-            } catch (error) {
-                container.innerHTML = `<p style="color: red;">Error loading repositories: ${error.message}</p>`;
-            }
-        }
+    </section>
 
-        fetchCategorizedRepos();
-    </script>
+    <!-- INTERESTS -->
+    <section class="section section--compact section--dark" id="interets">
+      <h3 class="subhead subhead--first reveal" data-i18n="interests.title">Outside of work</h3>
+      <ul class="interests">
+        <li class="interest reveal">
+          <span class="interest__name" data-i18n="interests.sport.title">Sport</span>
+          <p class="interest__text" data-i18n="interests.sport.text">A daily habit that keeps me balanced, and a way to keep challenging myself.</p>
+        </li>
+        <li class="interest reveal">
+          <span class="interest__name" data-i18n="interests.hiking.title">Hiking</span>
+          <p class="interest__text" data-i18n="interests.hiking.text">Sport, nature and discovery all in one. Nothing clears my head like a good trail.</p>
+        </li>
+        <li class="interest reveal">
+          <span class="interest__name" data-i18n="interests.travel.title">Travel</span>
+          <p class="interest__text" data-i18n="interests.travel.text">I had the opportunity to travel with the army, in the French overseas territories and in Africa. I then kept going in my own time, across many countries in Europe and in the Americas.</p>
+        </li>
+        <li class="interest reveal">
+          <span class="interest__name" data-i18n="interests.learning.title">Learning</span>
+          <p class="interest__text" data-i18n="interests.learning.text">Curious by nature, I like to learn something new every day, in tech and beyond.</p>
+        </li>
+        <li class="interest reveal">
+          <span class="interest__name" data-i18n="interests.extreme.title">Extreme sports</span>
+          <p class="interest__text" data-i18n="interests.extreme.text">I enjoy watching extreme sports, for the technique, the nerve and the limits they push.</p>
+        </li>
+      </ul>
+    </section>
 
-</body>
+    <!-- PROJECTS -->
+    <section class="section section--tight-bottom" id="projets">
+      <div class="section__head section__head--tight">
+        <span class="section__index reveal">02</span>
+        <h2 class="section__title reveal" data-i18n="projects.title">Projects</h2>
+      </div>
+      <p class="section__intro reveal" data-i18n="projects.intro">Here are a few projects I built to meet my own needs, in fields that interest me. Click on any of them to explore it. Please note that the experience differs between desktop and mobile&nbsp;: browsing on a computer is always more comfortable.</p>
+      <!-- Cards are generated from js/projects.js (field "group") -->
+      <div class="projects-group">
+        <div class="projects-group__head reveal">
+          <h3 class="projects-group__title" data-i18n="projects.featured.title">Featured projects</h3>
+          <p class="projects-group__desc" data-i18n="projects.featured.desc">In-depth, standalone projects.</p>
+        </div>
+        <div class="projects" id="projects-featured"></div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="section section--compact section--dark" id="collections">
+      <div class="projects-group">
+        <div class="projects-group__head reveal">
+          <h3 class="projects-group__title" data-i18n="projects.collections.title">Project collections</h3>
+          <p class="projects-group__desc" data-i18n="projects.collections.desc">Several projects grouped in one place.</p>
+        </div>
+        <div class="projects" id="projects-collections"></div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section class="section section--compact" id="cv">
+      <div class="section__head">
+        <span class="section__index reveal">03</span>
+        <h2 class="section__title reveal" data-i18n="cv.title">Curriculum Vitae</h2>
+      </div>
+      <a href="cv.html" class="cv-link reveal">
+        <span class="cv-link__label" data-i18n="cv.label">Résumé</span>
+        <span class="cv-link__value" data-i18n="cv.open">View my CV</span>
+        <span class="cv-link__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--dark" id="contact">
+      <div class="section__head">
+        <span class="section__index reveal">04</span>
+        <h2 class="section__title reveal" data-i18n="contact.title">Contact</h2>
+      </div>
+      <p class="contact__lead reveal" data-i18n="contact.lead">A project, an opportunity, a question&nbsp;?</p>
+      <!-- Rows (email, LinkedIn, GitHub) are generated from js/projects.js -->
+      <ul class="contact__list" id="contact-list"></ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year2">2026</span> Thibaud Derville</span>
+    <a href="legal.html" data-i18n="footer.legal">Legal notice</a>
+    <span data-i18n="footer.built">Built with HTML, CSS and JavaScript.</span>
+    <a href="#accueil" data-i18n="footer.top">Back to top ↑</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script></body>
 </html>

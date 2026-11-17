@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Thibaud Derville</title>
+  <meta name="description" content="Curriculum vitae of Thibaud Derville&nbsp;: web developer and data analyst.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f4f3ef">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thibaud Derville">
+  <meta property="og:title" content="CV — Thibaud Derville">
+  <meta property="og:description" content="Curriculum vitae of Thibaud Derville, web developer and data analyst.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title-key="cv.meta.title" data-desc-key="cv.meta.description">
+
+  <header class="header" id="header">
+    <a href="index.html" class="logo">THIBAUD DERVILLE</a>
+    <div class="header__menu" id="site-menu">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__back"><span aria-hidden="true">←</span> <span data-i18n="cv.back">Back to portfolio</span></a>
+    </nav>
+    <div class="social" id="header-social" role="group" aria-label="Social links"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="el" lang="el" aria-pressed="false">EL</button>
+    </div>
+    </div>
+    <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="cv-page">
+    <p class="eyebrow" data-i18n="cv.label">Résumé</p>
+    <h1 class="cv-title" data-i18n="cv.title">Curriculum Vitae</h1>
+    <p class="cv-lead" data-i18n="cv.lead">My experience, training and skills on a single page.</p>
+
+    <div class="cv-actions">
+      <a href="index.html" class="link-arrow link-arrow--back"><span aria-hidden="true">←</span> <span data-i18n="cv.back">Back to portfolio</span></a>
+      <!-- Real download if CV.file is set in js/projects.js, otherwise opens the print dialog ("Save as PDF") -->
+      <a id="cv-download" class="btn" href="#" role="button"><span data-i18n="cv.download">Download CV</span> <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="cv-hint" id="cv-hint" data-i18n="cv.hint">In the print window, choose “Save as PDF”.</p>
+
+    <!-- The CV itself is generated from js/cv-data.js -->
+    <article class="cv-sheet" id="cv-doc" aria-label="Curriculum Vitae"></article>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year2">2026</span> Thibaud Derville</span>
+    <a href="legal.html" data-i18n="footer.legal">Legal notice</a>
+    <a href="index.html" data-i18n="cv.back">Back to portfolio</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/cv-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

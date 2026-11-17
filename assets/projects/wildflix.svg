@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="WildFlix streaming interface">
+  <defs>
+    <style>
+      .brand { font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Helvetica Neue", Arial, sans-serif; font-weight: 900; }
+      .ui { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    </style>
+    <clipPath id="pc"><rect width="130" height="190"/></clipPath>
+
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#262626"/><stop offset="1" stop-color="#101010"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#e50914" stop-opacity="0.45"/><stop offset="1" stop-color="#e50914" stop-opacity="0"/></radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.88"/></linearGradient>
+
+    <!-- affiche 1 : espace -->
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050b1f"/><stop offset="1" stop-color="#1d3f7a"/></linearGradient>
+    <radialGradient id="planet" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffd9a0"/><stop offset="0.45" stop-color="#d9692b"/><stop offset="1" stop-color="#4a160d"/></radialGradient>
+    <!-- affiche 2 : port -->
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1740"/><stop offset="0.5" stop-color="#b4483c"/><stop offset="1" stop-color="#f6a35a"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3470"/><stop offset="1" stop-color="#150f28"/></linearGradient>
+    <!-- affiche 3 : néon -->
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12062a"/><stop offset="1" stop-color="#4a1470"/></linearGradient>
+    <!-- affiche 4 : désert -->
+    <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b0a0a"/><stop offset="0.55" stop-color="#c2410c"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <!-- affiche 5 : route -->
+    <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2420"/><stop offset="1" stop-color="#2a7d68"/></linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#0b0b0b"/>
+
+  <!-- barre du haut -->
+  <text class="brand" x="50" y="104" font-size="60" letter-spacing="3" fill="#e50914">WILDFLIX</text>
+  <g fill="#f4f3ef" fill-opacity="0.55">
+    <rect x="420" y="80" width="46" height="5" rx="2"/><rect x="486" y="80" width="56" height="5" rx="2"/>
+    <rect x="562" y="80" width="40" height="5" rx="2"/><rect x="622" y="80" width="62" height="5" rx="2"/>
+  </g>
+  <rect x="708" y="68" width="30" height="30" rx="4" fill="#e50914"/>
+  <path d="M716 82 Q723 90 730 82" stroke="#0b0b0b" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="717" cy="79" r="1.8" fill="#0b0b0b"/><circle cx="729" cy="79" r="1.8" fill="#0b0b0b"/>
+
+  <!-- bannière -->
+  <rect x="50" y="130" width="700" height="210" fill="url(#hero)"/>
+  <circle cx="600" cy="235" r="150" fill="url(#glow)"/>
+  <circle cx="600" cy="235" r="96" stroke="#f4f3ef" stroke-opacity="0.22" stroke-width="1.4"/>
+  <circle cx="600" cy="235" r="62" stroke="#f4f3ef" stroke-opacity="0.35" stroke-width="1.4"/>
+  <path d="M585 205 L585 265 L636 235 Z" fill="#f4f3ef" fill-opacity="0.9"/>
+  <rect x="80" y="152" width="50" height="20" rx="2" fill="#e50914"/>
+  <text class="ui" x="89" y="167" font-size="12" font-weight="700" fill="#fff" letter-spacing="0.5">TOP 10</text>
+  <text class="ui" x="142" y="167" font-size="14" font-weight="700" fill="#46d369">98% match</text>
+  <rect x="80" y="196" width="250" height="24" fill="#f4f3ef"/>
+  <g fill="#f4f3ef" fill-opacity="0.4"><rect x="80" y="236" width="300" height="6"/><rect x="80" y="252" width="240" height="6"/></g>
+  <rect x="80" y="284" width="100" height="36" rx="4" fill="#f4f3ef"/>
+  <path d="M104 295 L104 309 L117 302 Z" fill="#0b0b0b"/>
+  <rect x="126" y="298" width="38" height="8" rx="2" fill="#0b0b0b"/>
+  <rect x="192" y="284" width="116" height="36" rx="4" fill="#f4f3ef" fill-opacity="0.22"/>
+  <rect x="212" y="298" width="76" height="8" rx="2" fill="#f4f3ef" fill-opacity="0.8"/>
+
+  <!-- rangée -->
+  <text class="ui" x="50" y="376" font-size="17" font-weight="700" fill="#f4f3ef">Recommended for you</text>
+
+  <!-- AFFICHE 1 : ORBITAL -->
+  <g transform="translate(50 392)" clip-path="url(#pc)">
+    <rect width="130" height="190" fill="url(#g1)"/>
+    <g fill="#fff"><circle cx="14" cy="18" r="1.2"/><circle cx="40" cy="10" r="0.9"/><circle cx="104" cy="16" r="1.3"/><circle cx="118" cy="46" r="0.9"/><circle cx="22" cy="58" r="1"/><circle cx="92" cy="34" r="0.8"/><circle cx="60" cy="30" r="0.8"/><circle cx="8" cy="100" r="0.9"/><circle cx="122" cy="110" r="1"/></g>
+    <g transform="rotate(-18 65 88)">
+      <path d="M-14 88 A79 17 0 0 1 144 88" stroke="#f4d9a8" stroke-opacity="0.75" stroke-width="3"/>
+      <circle cx="65" cy="88" r="42" fill="url(#planet)"/>
+      <path d="M-14 88 A79 17 0 0 0 144 88" stroke="#f4d9a8" stroke-opacity="0.9" stroke-width="3"/>
+    </g>
+    <rect y="100" width="130" height="90" fill="url(#fade)"/>
+    <text class="brand" x="65" y="168" font-size="22" fill="#fff" text-anchor="middle" letter-spacing="2">ORBITAL</text>
+    <text class="brand" x="8" y="22" font-size="18" fill="#e50914">W</text>
+  </g>
+
+  <!-- AFFICHE 2 : LAST HARBOR -->
+  <g transform="translate(192 392)" clip-path="url(#pc)">
+    <rect width="130" height="190" fill="url(#g2)"/>
+    <circle cx="62" cy="118" r="28" fill="#ffd9a0"/>
+    <rect y="120" width="130" height="70" fill="url(#sea)"/>
+    <g stroke="#ffd9a0" stroke-linecap="round"><path d="M42 126 H82" stroke-opacity="0.8" stroke-width="2.4"/><path d="M48 133 H76" stroke-opacity="0.6" stroke-width="2"/><path d="M52 140 H72" stroke-opacity="0.45" stroke-width="1.8"/><path d="M56 147 H68" stroke-opacity="0.3" stroke-width="1.6"/></g>
+    <path d="M96 122 L104 76 L116 76 L122 122 Z" fill="#120d1f"/>
+    <rect x="102" y="66" width="16" height="10" fill="#120d1f"/><path d="M100 66 L110 58 L120 66 Z" fill="#120d1f"/>
+    <path d="M110 71 L-10 56 L-10 90 Z" fill="#ffe2a8" fill-opacity="0.28"/>
+    <path d="M84 126 C96 118 118 118 134 126 V150 H84 Z" fill="#120d1f"/>
+    <rect y="100" width="130" height="90" fill="url(#fade)"/>
+    <text class="brand" x="65" y="166" font-size="17" fill="#fff" text-anchor="middle" letter-spacing="1.5">LAST HARBOR</text>
+    <text class="brand" x="8" y="22" font-size="18" fill="#e50914">W</text>
+  </g>
+
+  <!-- AFFICHE 3 : NEON ROW -->
+  <g transform="translate(334 392)" clip-path="url(#pc)">
+    <rect width="130" height="190" fill="url(#g3)"/>
+    <circle cx="65" cy="58" r="30" stroke="#ff3d9a" stroke-width="3"/>
+    <circle cx="65" cy="58" r="30" stroke="#ff3d9a" stroke-opacity="0.35" stroke-width="8"/>
+    <path d="M30 92 H100" stroke="#3de2ff" stroke-width="2"/>
+    <g fill="#0a0416">
+      <rect x="0" y="108" width="22" height="82"/><rect x="24" y="90" width="26" height="100"/><rect x="52" y="104" width="20" height="86"/>
+      <rect x="74" y="82" width="28" height="108"/><rect x="104" y="100" width="26" height="90"/>
+    </g>
+    <g fill="#ff3d9a"><rect x="29" y="98" width="3" height="3"/><rect x="38" y="106" width="3" height="3"/><rect x="29" y="118" width="3" height="3"/><rect x="82" y="92" width="3" height="3"/><rect x="92" y="104" width="3" height="3"/><rect x="82" y="120" width="3" height="3"/><rect x="110" y="110" width="3" height="3"/></g>
+    <g fill="#3de2ff"><rect x="38" y="94" width="3" height="3"/><rect x="42" y="124" width="3" height="3"/><rect x="58" y="112" width="3" height="3"/><rect x="90" y="132" width="3" height="3"/><rect x="118" y="122" width="3" height="3"/><rect x="8" y="118" width="3" height="3"/></g>
+    <rect y="100" width="130" height="90" fill="url(#fade)"/>
+    <text class="brand" x="65" y="168" font-size="21" fill="#fff" text-anchor="middle" letter-spacing="2">NEON ROW</text>
+    <text class="brand" x="8" y="22" font-size="18" fill="#e50914">W</text>
+  </g>
+
+  <!-- AFFICHE 4 : EMBER -->
+  <g transform="translate(476 392)" clip-path="url(#pc)">
+    <rect width="130" height="190" fill="url(#g4)"/>
+    <circle cx="65" cy="100" r="34" fill="#ffd27a"/>
+    <path d="M0 116 C28 100 54 108 78 112 C100 116 118 108 130 104 V190 H0 Z" fill="#8a2410"/>
+    <path d="M0 134 C24 122 60 128 86 134 C108 139 122 132 130 128 V190 H0 Z" fill="#4e130a"/>
+    <path d="M0 156 C34 146 70 152 100 158 C114 160 124 157 130 155 V190 H0 Z" fill="#240805"/>
+    <rect y="100" width="130" height="90" fill="url(#fade)"/>
+    <text class="brand" x="65" y="170" font-size="24" fill="#fff" text-anchor="middle" letter-spacing="3">EMBER</text>
+    <text class="brand" x="8" y="22" font-size="18" fill="#e50914">W</text>
+  </g>
+
+  <!-- AFFICHE 5 : WILD ROUTE -->
+  <g transform="translate(618 392)" clip-path="url(#pc)">
+    <rect width="132" height="190" fill="url(#g5)"/>
+    <circle cx="96" cy="34" r="12" fill="#f4efd0" fill-opacity="0.9"/>
+    <path d="M0 110 L34 58 L58 90 L84 46 L132 112 V190 H0 Z" fill="#0f3d35"/>
+    <path d="M0 126 L28 92 L56 120 L90 80 L132 128 V190 H0 Z" fill="#0a2a25"/>
+    <path d="M62 112 L70 112 L104 190 H18 Z" fill="#101a18"/>
+    <path d="M66 116 V124 M66 134 V146 M66 158 V176" stroke="#f4e3a1" stroke-width="2"/>
+    <g fill="#06201c"><path d="M12 130 L22 104 L32 130 Z"/><path d="M104 132 L114 106 L124 132 Z"/><path d="M0 146 L10 118 L20 146 Z"/></g>
+    <rect y="100" width="132" height="90" fill="url(#fade)"/>
+    <text class="brand" x="66" y="168" font-size="20" fill="#fff" text-anchor="middle" letter-spacing="1.5">WILD ROUTE</text>
+    <text class="brand" x="8" y="22" font-size="18" fill="#e50914">W</text>
+  </g>
+
+  <!-- progression -->
+  <rect x="50" y="586" width="130" height="4" fill="#f4f3ef" fill-opacity="0.2"/>
+  <rect x="50" y="586" width="78" height="4" fill="#e50914"/>
+</svg>

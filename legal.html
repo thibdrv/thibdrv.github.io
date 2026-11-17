@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal notice — Thibaud Derville</title>
+  <meta name="description" content="Legal notice of the website of Thibaud Derville.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f4f3ef">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title-key="legal.meta.title" data-desc-key="legal.meta.description">
+
+  <header class="header" id="header">
+    <a href="index.html" class="logo">THIBAUD DERVILLE</a>
+    <div class="header__menu" id="site-menu">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__back"><span aria-hidden="true">←</span> <span data-i18n="cv.back">Back to portfolio</span></a>
+    </nav>
+    <div class="social" id="header-social" role="group" aria-label="Social links"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="el" lang="el" aria-pressed="false">EL</button>
+    </div>
+    </div>
+    <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="cv-page">
+    <p class="eyebrow" data-i18n="legal.label">Legal</p>
+    <h1 class="cv-title" data-i18n="legal.title">Legal notice</h1>
+    <p class="cv-lead" data-i18n="legal.lead">Information about this website, its publisher and the handling of data.</p>
+
+    <div class="legal">
+      <section class="legal__sec">
+        <h2 data-i18n="legal.pub.t">Publisher</h2>
+        <p data-i18n="legal.pub.p">This website is published by Thibaud Derville, an individual, in a personal capacity, to present his background and projects. Publication director&nbsp;: Thibaud Derville.</p>
+      </section>
+      <section class="legal__sec">
+        <h2 data-i18n="legal.contact.t">Contact</h2>
+        <p><a id="legal-mail" href="mailto:thibaud.derville@outlook.fr">thibaud.derville@outlook.fr</a></p>
+      </section>
+      <section class="legal__sec">
+        <h2 data-i18n="legal.host.t">Hosting</h2>
+        <p data-i18n="legal.host.p">The website is hosted by GitHub Pages&nbsp;: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States (github.com).</p>
+      </section>
+      <section class="legal__sec">
+        <h2 data-i18n="legal.data.t">Personal data and cookies</h2>
+        <p data-i18n="legal.data.p">This website does not use cookies for tracking, advertising or audience measurement, and does not collect personal data. Your language choice is saved only in your own browser (local storage) to remember your preference&nbsp;; it is never sent to a server. If you write to me by email, your address and message are used only to reply to you. In accordance with the GDPR, you can request access, correction or deletion of your data at any time by email.</p>
+      </section>
+      <section class="legal__sec">
+        <h2 data-i18n="legal.third.t">Third-party services</h2>
+        <p data-i18n="legal.third.p">The fonts (Inter and Cormorant Garamond) are loaded from Google Fonts, which may receive your IP address. Links to LinkedIn, GitHub and project demos lead to external websites with their own policies.</p>
+      </section>
+      <section class="legal__sec">
+        <h2 data-i18n="legal.ip.t">Intellectual property</h2>
+        <p data-i18n="legal.ip.p">Unless stated otherwise, the texts, illustrations and design of this website belong to Thibaud Derville. Reproduction without permission is prohibited. The flag of Cyprus comes from Wikimedia Commons (public domain). The fonts are distributed under the SIL Open Font License.</p>
+      </section>
+    </div>
+    <p class="cv-hint" data-i18n="legal.updated">Last updated&nbsp;: November 2026</p>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year2">2026</span> Thibaud Derville</span>
+    <a href="index.html" data-i18n="cv.back">Back to portfolio</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // l'e-mail vient de js/projects.js (un seul endroit à modifier)
+    (function () {
+      var a = document.getElementById("legal-mail");
+      if (a && typeof EMAIL !== "undefined") { a.href = "mailto:" + EMAIL; a.textContent = EMAIL; }
+    })();
+  </script>
+</body>
+</html>

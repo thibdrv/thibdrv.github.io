@@ -1,0 +1,10 @@
+# Outils locaux (aperçu Claude), pas utiles en ligne
+.claude/
+
+# Fichiers système / éditeur
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/
