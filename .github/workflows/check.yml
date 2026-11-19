@@ -1,0 +1,20 @@
+name: Vérification du portfolio
+
+# À chaque envoi sur main et à chaque proposition de modification :
+# vérifie que les parties générées (données structurées, version sans JavaScript)
+# et les PDF du CV correspondent bien aux données du site.
+# Si ce contrôle échoue : lance « python tools/build.py » en local, puis enregistre les fichiers modifiés.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parties générées et PDF du CV à jour ?
+        run: python3 tools/build.py --check

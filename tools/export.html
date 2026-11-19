@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Export des données (utilisé par tools/build.py)</title>
+</head>
+<body>
+  <!-- Page technique : charge les données du site et les écrit en JSON dans #out.
+       tools/build.py l'ouvre avec Chrome (--dump-dom) pour lire ces données. -->
+  <pre id="out"></pre>
+  <script src="../js/projects.js"></script>
+  <script src="../js/cv-data.js"></script>
+  <script>
+    // texte anglais d'une valeur { en, fr, el } (ou texte simple)
+    const en = (v) => (v && typeof v === "object" && !Array.isArray(v) ? (v.en ?? "") : (v ?? ""));
+    const data = {
+      siteUrl: SITE_URL,
+      email: EMAIL,
+      socials: SOCIALS,
+      cvFiles: CV.file,
+      projects: PROJECTS.map((p) => ({
+        title: en(p.title),
+        group: p.group || "featured",
+        description: en(p.description),
+        result: en(p.result),
+        url: p.url || "",
+        category: en(p.category)
+      })),
+      cv: {
+        role: en(CV_DATA.role),
+        profile: en(CV_DATA.profile),
+        location: en(CV_DATA.location),
+        photo: CV_DATA.photo,
+        education: CV_DATA.education.map((e) => ({ degree: en(e.degree), field: en(e.field), year: e.year, place: en(e.place) })),
+        skills: CV_DATA.skills.map((s) => ({ label: en(s.label), items: en(s.items) })),
+        languages: CV_DATA.languages.map((l) => ({ name: en(l.name), level: en(l.level) })),
+        experience: CV_DATA.experience.map((j) => ({
+          role: en(j.role),
+          org: en(j.org),
+          place: en(j.place),
+          period: en(j.period),
+          bullets: (j.bullets && j.bullets.en) || []
+        }))
+      }
+    };
+    document.getElementById("out").textContent = JSON.stringify(data);
+  </script>
+</body>
+</html>

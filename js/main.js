@@ -10,6 +10,14 @@
   // N'autorise que les liens http(s) pour éviter tout "javascript:" par erreur
   const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
 
+  // Nom court d'un projet pour les statistiques : "WildFlix, Movie Recommendation" -> "wildflix-movie-recommendation"
+  const trackSlug = (p) =>
+    String((p.title && typeof p.title === "object" ? p.title.en : p.title) || "project")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 40);
+
   const { t, loc } = window.i18n;
 
   function renderProjects(instant) {
@@ -30,14 +38,15 @@
       const url = safeUrl(p.url);
       const repo = safeUrl(p.repo);
       const live = Boolean(url);
+      const slug = trackSlug(p);
       const tag = live ? "a" : "article";
-      const attrs = live ? ` href="${esc(url)}" target="_blank" rel="noopener noreferrer"` : "";
+      const attrs = live ? ` href="${esc(url)}" target="_blank" rel="noopener noreferrer" data-track="project-${slug}"` : "";
       const title = loc(p.title);
       const initial = esc(p.mono || String(title || "?").trim().charAt(0).toUpperCase());
       const demo = safeUrl(p.demo);
 
       const media = p.image
-        ? `<img src="${esc(p.image)}" alt="${esc(title)}" loading="lazy">`
+        ? `<img src="${esc(p.image)}" alt="${esc(title)}" width="${Number(p.imageWidth) || 800}" height="${Number(p.imageHeight) || 600}" loading="lazy" decoding="async">`
         : `<span class="card__mono" aria-hidden="true">${initial}</span>`;
 
       const tags = (p.tags || []).map((tg) => `<li>${esc(loc(tg))}</li>`).join("");
@@ -48,8 +57,8 @@
 
       // Le dépôt est un lien séparé : on évite d'imbriquer des <a> dans une carte-lien
       const extra = [
-        demo && `<a href="${esc(demo)}" target="_blank" rel="noopener noreferrer">${esc(t("projects.demo"))} ↗</a>`,
-        repo && `<a href="${esc(repo)}" target="_blank" rel="noopener noreferrer">${esc(t("projects.code"))} ↗</a>`
+        demo && `<a href="${esc(demo)}" target="_blank" rel="noopener noreferrer" data-track="project-${slug}-demo">${esc(t("projects.demo"))} ↗</a>`,
+        repo && `<a href="${esc(repo)}" target="_blank" rel="noopener noreferrer" data-track="project-${slug}-code">${esc(t("projects.code"))} ↗</a>`
       ].filter(Boolean);
       const repoLink = extra.length ? `<div class="card__links">${extra.join("")}</div>` : "";
 
@@ -316,6 +325,39 @@
   }
   window.addEventListener("beforeprint", updatePrintDate);
 
+  /* Statistiques de visite (GoatCounter, sans cookie) : on compte aussi les actions utiles.
+     Les noms ci-dessous apparaissent dans le tableau de bord GoatCounter (filtre « Events »).
+     Sans le script GoatCounter (bloqueur, hors ligne), rien ne se passe. */
+  function track(name) {
+    try {
+      const g = window.goatcounter;
+      if (g && typeof g.count === "function") g.count({ path: name, title: name, event: true });
+    } catch (e) {}
+  }
+
+  function trackName(a) {
+    const named = a.closest("[data-track]");
+    if (named) return named.dataset.track;
+    if (a.id === "cv-download") {
+      return (a.dataset.mode === "file" ? "cv-download-" : "cv-print-") + window.i18n.lang;
+    }
+    const href = a.getAttribute("href") || "";
+    if (/^https?:\/\/(www\.)?github\.com\/thibdrv/i.test(href)) return "click-github";
+    if (/linkedin\.com\//i.test(href)) return "click-linkedin";
+    if (/^mailto:/i.test(href)) return "click-email";
+    if (/^tel:/i.test(href)) return "click-phone";
+    return "";
+  }
+
+  function initTracking() {
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest("a");
+      if (!a) return;
+      const name = trackName(a);
+      if (name) track(name);
+    });
+  }
+
   /* Menu burger (mobile) : s'ouvre au clic, se ferme en choisissant un lien,
      avec Échap, en cliquant à côté, ou si on repasse en grand écran */
   function initMenu() {
@@ -400,6 +442,7 @@
   renderProjects();
   document.addEventListener("langchange", () => renderProjects(true));
   initMenu();
+  initTracking();
   /* Qualités : un seul panneau ouvert à la fois (survol, focus clavier ou clic) */
   (function initStrengths() {
     const list = document.getElementById("strengths");

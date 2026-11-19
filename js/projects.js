@@ -14,6 +14,7 @@
    - demo        : lien d'une démo en direct (optionnel)
    - repo        : lien GitHub (optionnel)
    - image       : chemin vers une capture, ex. "assets/mon-projet.jpg" (optionnel)
+   - imageWidth / imageHeight : dimensions de l'image (optionnel, 800 x 600 par défaut ; évite les sauts de page)
    - mono        : lettres affichées quand il n'y a pas d'image (optionnel)
    - group       : "featured" = gros projet unique (affiché en premier)
                    "collection" = regroupe plusieurs projets (affiché ensuite)

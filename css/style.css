@@ -30,6 +30,31 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* Lien vers le GitHub, à côté du titre « Projets » */
+.section__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+  align-self: center;
+  padding: 11px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+.section__link:hover,
+.section__link:focus-visible { background-color: rgba(128, 128, 128, 0.12); border-color: var(--muted); }
+
+/* Version sans JavaScript (balises <noscript> générées par tools/build.py) */
+.nojs-list li { margin-bottom: 30px; }
+.nojs-list h3 { font-weight: 400; font-size: 20px; }
+.nojs-list a { border-bottom: 1px solid currentColor; }
+.nojs-list p { max-width: 620px; color: var(--muted); }
+
 /* Page 404 */
 .page-404 { background: var(--ink); color: var(--bg); }
 .nf {
@@ -1379,6 +1404,7 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   .section.section--tight-bottom { padding-top: 72px; }
   .section__head { margin-bottom: 40px; }
   .section__head { flex-wrap: wrap; gap: 6px 20px; }
+  .section__link { margin-left: 0; margin-top: 10px; padding: 12px 18px; letter-spacing: 0.12em; white-space: normal; max-width: 100%; border-radius: 24px; line-height: 1.5; }
   .section__title { min-width: 0; overflow-wrap: anywhere; font-size: clamp(26px, 8.4vw, 48px); }
   .timeline__period { font-size: 24px; }
   .card__meta { flex-wrap: wrap; gap: 4px 16px; }

@@ -40,7 +40,6 @@
       "nf.title": "Page not found",
       "nf.text": "The page you are looking for does not exist or has moved.",
       "nf.back": "Back to home",
-      "hero.badge": "WEB DEVELOPER • DATA ANALYST • WEB DEVELOPER • DATA ANALYST • ",
 
       "path.title": "About me",
       "path.army.period": "6 years",
@@ -114,6 +113,7 @@
       "interests.extreme.text": "I enjoy watching extreme sports, for the technique, the nerve and the limits they push.",
 
       "projects.title": "Projects",
+      "projects.github": "See my code on GitHub",
       "projects.intro":
         "Here are a few projects I built to meet my own needs, in fields that interest me. Click on any of them to explore it. Please note that the experience differs between desktop and mobile\u00a0: browsing on a computer is always more comfortable.",
       "projects.soon": "Coming soon",
@@ -150,10 +150,6 @@
       "cv.meta.description": "Curriculum vitae of Thibaud Derville : web developer and data analyst.",
 
       "footer.top": "Back to top ↑",
-      "footer.about": "Web developer and data analyst, former paratrooper.",
-      "footer.nav": "Navigate",
-      "footer.home": "Home",
-      "footer.social": "Elsewhere",
       "footer.built": "Built with HTML, CSS and JavaScript.",
       "footer.legal": "Legal notice",
       "legal.meta.title": "Legal notice — Thibaud Derville",
@@ -166,10 +162,10 @@
       "legal.contact.t": "Contact",
       "legal.host.t": "Hosting",
       "legal.host.p": "The website is hosted by GitHub Pages\u00a0: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States (github.com).",
-      "legal.data.t": "Personal data and cookies",
-      "legal.data.p": "This website does not use cookies for tracking, advertising or audience measurement, and does not collect personal data. Your language choice is saved only in your own browser (local storage) to remember your preference\u00a0; it is never sent to a server. If you write to me by email, your address and message are used only to reply to you. In accordance with the GDPR, you can request access, correction or deletion of your data at any time by email.",
+      "legal.data.t": "Personal data, cookies and audience measurement",
+      "legal.data.p": "This website does not use cookies and does not collect personal data. To know how many people visit it, and which pages, CV downloads and project links are used, it uses GoatCounter, a privacy-friendly audience-measurement service. GoatCounter stores nothing in your browser, sets no cookie, builds no profile and does not follow you from one website to another. It keeps only aggregated statistics : pages viewed, referring website, browser, operating system, screen width, language and country. Your IP address is not stored : it is used only to determine your country and, for up to 8 hours and only in memory, to avoid counting the same visit twice. The legal basis is my legitimate interest in knowing the audience of this website. For this reason, no cookie banner is displayed. Your language choice is saved only in your own browser (local storage) to remember your preference ; it is never sent to a server. If you write to me by email, your address and message are used only to reply to you. In accordance with the GDPR, you can request access, correction or deletion of your data at any time by email ; note that the statistics are aggregated and cannot be linked back to a person.",
       "legal.third.t": "Third-party services",
-      "legal.third.p": "The fonts (Inter and Cormorant Garamond) are hosted on this website: no request is sent to Google or any other third party to display them. Links to LinkedIn, GitHub and project demos lead to external websites with their own policies.",
+      "legal.third.p": "The audience measurement service is GoatCounter (goatcounter.com), operated by Martin Tournoij in Ireland, with servers in Finland and Germany. Its script is loaded from gc.zgo.at and sends statistics to thibauddrv.goatcounter.com. According to its privacy policy, no information is shared with third parties. The fonts (Inter and Cormorant Garamond) are hosted on this website : no request is sent to Google or any other third party to display them. Links to LinkedIn, GitHub and project demos lead to external websites with their own policies.",
       "legal.ip.t": "Intellectual property",
       "legal.ip.p": "Unless stated otherwise, the texts, illustrations and design of this website belong to Thibaud Derville. Reproduction without permission is prohibited. The flag of Cyprus comes from Wikimedia Commons (public domain). The fonts are distributed under the SIL Open Font License.",
       "legal.updated": "Last updated\u00a0: November 2026"
@@ -202,7 +198,6 @@
       "nf.title": "Page introuvable",
       "nf.text": "La page que vous cherchez n’existe pas ou a été déplacée.",
       "nf.back": "Retour à l’accueil",
-      "hero.badge": "DÉVELOPPEUR WEB • DATA ANALYST • DÉVELOPPEUR WEB • DATA ANALYST • ",
 
       "path.title": "À propos de moi",
       "path.army.period": "6 ans",
@@ -276,6 +271,7 @@
       "interests.extreme.text": "J’aime regarder les sports extrêmes, pour la technique, le sang-froid et les limites qu’ils repoussent.",
 
       "projects.title": "Projets",
+      "projects.github": "Voir mon code sur GitHub",
       "projects.intro":
         "Voici quelques projets que j’ai réalisés pour répondre à mes propres besoins, dans des domaines qui m’intéressent. Cliquez sur l’un d’eux pour le découvrir. À noter : l’affichage diffère entre ordinateur et mobile, et la consultation sur PC reste toujours plus agréable.",
       "projects.soon": "Bientôt",
@@ -312,10 +308,6 @@
       "cv.meta.description": "Curriculum vitae de Thibaud Derville : développeur web et data analyst.",
 
       "footer.top": "Retour en haut ↑",
-      "footer.about": "Développeur web et data analyst, ancien parachutiste.",
-      "footer.nav": "Navigation",
-      "footer.home": "Accueil",
-      "footer.social": "Ailleurs",
       "footer.built": "Réalisé en HTML, CSS et JavaScript.",
       "footer.legal": "Mentions légales",
       "legal.meta.title": "Mentions légales — Thibaud Derville",
@@ -328,10 +320,10 @@
       "legal.contact.t": "Contact",
       "legal.host.t": "Hébergement",
       "legal.host.p": "Le site est hébergé par GitHub Pages : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (github.com).",
-      "legal.data.t": "Données personnelles et cookies",
-      "legal.data.p": "Ce site n’utilise aucun cookie de suivi, de publicité ou de mesure d’audience et ne collecte aucune donnée personnelle. Votre choix de langue est enregistré uniquement dans votre navigateur (stockage local) pour mémoriser votre préférence ; il n’est jamais envoyé à un serveur. Si vous m’écrivez par e-mail, votre adresse et votre message ne servent qu’à vous répondre. Conformément au RGPD, vous pouvez demander à tout moment l’accès, la rectification ou la suppression de vos données par e-mail.",
+      "legal.data.t": "Données personnelles, cookies et mesure d’audience",
+      "legal.data.p": "Ce site n’utilise pas de cookies et ne collecte pas de données personnelles. Pour savoir combien de personnes le visitent, et quelles pages, quels téléchargements de CV et quels liens de projets sont utilisés, il s’appuie sur GoatCounter, un service de mesure d’audience respectueux de la vie privée. GoatCounter ne stocke rien dans votre navigateur, ne dépose aucun cookie, ne crée aucun profil et ne vous suit pas d’un site à l’autre. Il conserve uniquement des statistiques agrégées : pages vues, site d’origine, navigateur, système d’exploitation, largeur d’écran, langue et pays. Votre adresse IP n’est pas enregistrée : elle sert uniquement à déterminer votre pays et, pendant 8 heures au maximum et seulement en mémoire, à éviter de compter deux fois la même visite. La base légale est mon intérêt légitime à connaître l’audience de ce site. C’est pourquoi aucun bandeau de cookies n’est affiché. Votre choix de langue est enregistré uniquement dans votre propre navigateur (stockage local) pour mémoriser votre préférence ; il n’est jamais envoyé à un serveur. Si vous m’écrivez par e-mail, votre adresse et votre message servent uniquement à vous répondre. Conformément au RGPD, vous pouvez demander l’accès, la correction ou la suppression de vos données à tout moment par e-mail ; les statistiques étant agrégées, elles ne peuvent pas être rattachées à une personne.",
       "legal.third.t": "Services tiers",
-      "legal.third.p": "Les polices (Inter et Cormorant Garamond) sont hébergées sur ce site : aucune requête n’est envoyée à Google ni à un autre tiers pour les afficher. Les liens vers LinkedIn, GitHub et les démonstrations de projets mènent vers des sites externes soumis à leurs propres politiques.",
+      "legal.third.p": "Le service de mesure d’audience est GoatCounter (goatcounter.com), exploité par Martin Tournoij en Irlande, avec des serveurs en Finlande et en Allemagne. Son script est chargé depuis gc.zgo.at et envoie les statistiques à thibauddrv.goatcounter.com. Selon sa politique de confidentialité, aucune information n’est partagée avec des tiers. Les polices (Inter et Cormorant Garamond) sont hébergées sur ce site : aucune requête n’est envoyée à Google ni à un autre tiers pour les afficher. Les liens vers LinkedIn, GitHub et les démonstrations de projets mènent vers des sites externes soumis à leurs propres politiques.",
       "legal.ip.t": "Propriété intellectuelle",
       "legal.ip.p": "Sauf mention contraire, les textes, illustrations et la conception de ce site sont la propriété de Thibaud Derville. Toute reproduction sans autorisation est interdite. Le drapeau de Chypre provient de Wikimedia Commons (domaine public). Les polices sont distribuées sous licence SIL Open Font.",
       "legal.updated": "Dernière mise à jour : novembre 2026"
@@ -364,7 +356,6 @@
       "nf.title": "Η σελίδα δεν βρέθηκε",
       "nf.text": "Η σελίδα που αναζητάτε δεν υπάρχει ή έχει μετακινηθεί.",
       "nf.back": "Επιστροφή στην αρχική",
-      "hero.badge": "ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ WEB • ΑΝΑΛΥΤΗΣ ΔΕΔΟΜΕΝΩΝ • PORTFOLIO • ",
 
       "path.title": "Σχετικά με εμένα",
       "path.army.period": "6 χρόνια",
@@ -438,6 +429,7 @@
       "interests.extreme.text": "Μου αρέσει να παρακολουθώ ακραία σπορ, για την τεχνική, το ψυχικό σθένος και τα όρια που ξεπερνούν.",
 
       "projects.title": "Έργα",
+      "projects.github": "Δείτε τον κώδικά μου στο GitHub",
       "projects.intro":
         "Ακολουθούν μερικά έργα που δημιούργησα για να καλύψω δικές μου ανάγκες, σε τομείς που με ενδιαφέρουν. Κάντε κλικ σε οποιοδήποτε για να το εξερευνήσετε. Σημειώστε ότι η εμπειρία διαφέρει ανάμεσα σε υπολογιστή και κινητό : η περιήγηση από υπολογιστή είναι πάντα πιο ευχάριστη.",
       "projects.soon": "Σύντομα",
@@ -474,10 +466,6 @@
       "cv.meta.description": "Βιογραφικό του Thibaud Derville : προγραμματιστής web και αναλυτής δεδομένων.",
 
       "footer.top": "Επιστροφή πάνω ↑",
-      "footer.about": "Προγραμματιστής web και αναλυτής δεδομένων, πρώην αλεξιπτωτιστής.",
-      "footer.nav": "Πλοήγηση",
-      "footer.home": "Αρχική",
-      "footer.social": "Αλλού",
       "footer.built": "Φτιαγμένο με HTML, CSS και JavaScript.",
       "footer.legal": "Νομικές πληροφορίες",
       "legal.meta.title": "Νομικές πληροφορίες — Thibaud Derville",
@@ -490,10 +478,10 @@
       "legal.contact.t": "Επικοινωνία",
       "legal.host.t": "Φιλοξενία",
       "legal.host.p": "Ο ιστότοπος φιλοξενείται από το GitHub Pages\u00a0: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Ηνωμένες Πολιτείες (github.com).",
-      "legal.data.t": "Προσωπικά δεδομένα και cookies",
-      "legal.data.p": "Ο ιστότοπος δεν χρησιμοποιεί cookies παρακολούθησης, διαφήμισης ή μέτρησης επισκεψιμότητας και δεν συλλέγει προσωπικά δεδομένα. Η επιλογή γλώσσας αποθηκεύεται μόνο στο πρόγραμμα περιήγησής σας (τοπική αποθήκευση) για να θυμάται την προτίμησή σας· δεν αποστέλλεται ποτέ σε διακομιστή. Αν μου στείλετε email, η διεύθυνση και το μήνυμά σας χρησιμοποιούνται μόνο για να σας απαντήσω. Σύμφωνα με τον GDPR, μπορείτε ανά πάσα στιγμή να ζητήσετε πρόσβαση, διόρθωση ή διαγραφή των δεδομένων σας μέσω email.",
+      "legal.data.t": "Προσωπικά δεδομένα, cookies και μέτρηση επισκεψιμότητας",
+      "legal.data.p": "Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies και δεν συλλέγει προσωπικά δεδομένα. Για να γνωρίζω πόσοι τον επισκέπτονται και ποιες σελίδες, λήψεις βιογραφικού και σύνδεσμοι έργων χρησιμοποιούνται, χρησιμοποιεί το GoatCounter, μια υπηρεσία μέτρησης επισκεψιμότητας που σέβεται την ιδιωτικότητα. Το GoatCounter δεν αποθηκεύει τίποτα στο πρόγραμμα περιήγησής σας, δεν τοποθετεί cookies, δεν δημιουργεί προφίλ και δεν σας παρακολουθεί από ιστότοπο σε ιστότοπο. Διατηρεί μόνο συγκεντρωτικά στατιστικά : σελίδες που προβλήθηκαν, ιστότοπος προέλευσης, πρόγραμμα περιήγησης, λειτουργικό σύστημα, πλάτος οθόνης, γλώσσα και χώρα. Η διεύθυνση IP σας δεν αποθηκεύεται : χρησιμοποιείται μόνο για τον προσδιορισμό της χώρας και, για έως 8 ώρες και μόνο στη μνήμη, για να μην μετράται δύο φορές η ίδια επίσκεψη. Η νομική βάση είναι το έννομο συμφέρον μου να γνωρίζω το κοινό του ιστότοπου. Γι’ αυτό δεν εμφανίζεται banner για cookies. Η επιλογή γλώσσας αποθηκεύεται μόνο στο δικό σας πρόγραμμα περιήγησης (τοπική αποθήκευση) και δεν αποστέλλεται ποτέ σε διακομιστή. Αν μου στείλετε email, η διεύθυνση και το μήνυμά σας χρησιμοποιούνται μόνο για να σας απαντήσω. Σύμφωνα με τον GDPR, μπορείτε να ζητήσετε ανά πάσα στιγμή πρόσβαση, διόρθωση ή διαγραφή των δεδομένων σας μέσω email · τα στατιστικά είναι συγκεντρωτικά και δεν μπορούν να συνδεθούν με συγκεκριμένο πρόσωπο.",
       "legal.third.t": "Υπηρεσίες τρίτων",
-      "legal.third.p": "Οι γραμματοσειρές (Inter και Cormorant Garamond) φιλοξενούνται σε αυτόν τον ιστότοπο : δεν αποστέλλεται κανένα αίτημα στη Google ή σε άλλον τρίτο για την εμφάνισή τους. Οι σύνδεσμοι προς LinkedIn, GitHub και τις επιδείξεις έργων οδηγούν σε εξωτερικούς ιστότοπους με τις δικές τους πολιτικές.",
+      "legal.third.p": "Η υπηρεσία μέτρησης επισκεψιμότητας είναι το GoatCounter (goatcounter.com), που λειτουργεί από τον Martin Tournoij στην Ιρλανδία, με διακομιστές στη Φινλανδία και τη Γερμανία. Το script του φορτώνεται από το gc.zgo.at και στέλνει στατιστικά στο thibauddrv.goatcounter.com. Σύμφωνα με την πολιτική απορρήτου του, καμία πληροφορία δεν κοινοποιείται σε τρίτους. Οι γραμματοσειρές (Inter και Cormorant Garamond) φιλοξενούνται σε αυτόν τον ιστότοπο : δεν αποστέλλεται κανένα αίτημα στη Google ή σε άλλον τρίτο για την εμφάνισή τους. Οι σύνδεσμοι προς LinkedIn, GitHub και τις επιδείξεις έργων οδηγούν σε εξωτερικούς ιστότοπους με τις δικές τους πολιτικές.",
       "legal.ip.t": "Πνευματική ιδιοκτησία",
       "legal.ip.p": "Εκτός αν αναφέρεται διαφορετικά, τα κείμενα, οι εικονογραφήσεις και ο σχεδιασμός του ιστότοπου ανήκουν στον Thibaud Derville. Απαγορεύεται η αναπαραγωγή χωρίς άδεια. Η σημαία της Κύπρου προέρχεται από το Wikimedia Commons (κοινό κτήμα). Οι γραμματοσειρές διανέμονται με άδεια SIL Open Font.",
       "legal.updated": "Τελευταία ενημέρωση\u00a0: Νοέμβριος 2026"

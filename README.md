@@ -9,6 +9,8 @@ Site trilingue : anglais (par défaut), français et grec.
 - `cv.html` : CV écrit en HTML, avec téléchargement du PDF dans la langue choisie
 - `404.html` : page « introuvable » (servie automatiquement par GitHub Pages)
 - `robots.txt`, `sitemap.xml` : référencement
+- `tools/build.py` : génère les parties statiques et les PDF du CV (voir ci-dessous) ; `tools/export.html` en est la page technique
+- `.github/workflows/check.yml` : vérification automatique à chaque envoi sur GitHub
 - `legal.html` : mentions légales (éditeur, hébergement, données, propriété intellectuelle), en EN / FR / EL
 - `css/style.css` : styles (les blocs responsive sont regroupés en fin de fichier, du plus large au plus étroit)
 - `css/fonts.css` : polices hébergées (Inter, Cormorant Garamond), sans requête vers Google
@@ -27,18 +29,28 @@ Site trilingue : anglais (par défaut), français et grec.
 - **PDF du CV** : un par langue dans `assets/cv/`, déclarés dans `CV.file` (`js/projects.js`).
   Si `CV.file` est vide, le bouton « Télécharger » ouvre l'impression du navigateur (« Enregistrer au format PDF »).
 
-### Régénérer les PDF du CV (après une modification du CV)
+### Après une modification du CV ou des projets : `python tools/build.py`
 
-Avec le site lancé en local (voir ci-dessous) et Google Chrome installé :
+Le site construit les projets et le CV avec JavaScript. Pour que les moteurs de recherche, les aperçus de lien
+et les visiteurs sans JavaScript voient aussi le contenu, `tools/build.py` écrit dans les pages :
+
+- les **données structurées** (JSON-LD : une `Person` et la liste des projets) dans `index.html` ;
+- une **version simple** (`<noscript>`) des projets, du contact et du CV, dans `index.html` et `cv.html` ;
+- les **3 PDF du CV** (`assets/cv/`), régénérés seulement si le CV, la photo ou les règles d'impression ont changé.
 
 ```bash
-for L in en fr el; do
-  chrome --headless=new --no-pdf-header-footer --virtual-time-budget=8000     --print-to-pdf="assets/cv/CV_Thibaud_Derville_$(echo $L | tr a-z A-Z).pdf"     "http://localhost:5500/cv.html?lang=$L&pdf=1"
-done
+python tools/build.py          # tout mettre à jour
+python tools/build.py --pdf    # forcer aussi les PDF
+python tools/build.py --check  # ne rien modifier, échoue si quelque chose est périmé
 ```
 
-`?lang=` choisit la langue et `?pdf=1` remplace « Téléchargé le » par « Mis à jour le » dans le pied de page.
-Le CV est mis en page pour tenir sur une page A4 dans les trois langues : vérifier après chaque modification.
+Il faut Python 3 et Google Chrome (ou Chromium / Edge) ; `CHROME=/chemin/vers/chrome` si Chrome n'est pas trouvé.
+Le script refuse un PDF de plus d'une page : le CV est mis en page pour tenir sur une page A4 dans les trois langues.
+Les blocs générés sont entourés de repères `<!-- BUILD:... -->` : ne pas les modifier à la main.
+
+**Vérification automatique** : à chaque envoi sur `main`, GitHub lance `python tools/build.py --check`
+(onglet *Actions* du dépôt). S'il échoue, c'est que le CV ou les projets ont changé sans régénération :
+lancer `python tools/build.py` puis enregistrer les fichiers modifiés.
 
 ## Tester en local
 
@@ -57,6 +69,20 @@ Puis ouvrir <http://localhost:5500>.
 4. Ne pas publier le dossier `.claude/` (déjà exclu par `.gitignore`).
 5. `404.html` utilise des chemins absolus (`/css/...`) : il suppose que le site est à la racine du domaine (`thibdrv.github.io`).
 6. Si l'adresse du site change : mettre à jour `SITE_URL` (`js/projects.js`), `robots.txt`, `sitemap.xml` et les balises du `<head>`.
+
+## Statistiques de visite (GoatCounter)
+
+Les visites sont comptées avec [GoatCounter](https://www.goatcounter.com/), sans cookie et sans rien stocker dans le navigateur du visiteur.
+Tableau de bord : <https://thibauddrv.goatcounter.com> (compte personnel, connexion nécessaire).
+
+- Le script est ajouté en bas de `index.html`, `cv.html`, `legal.html` et `404.html`. Les visites depuis `localhost` sont ignorées automatiquement.
+- Des **événements** sont comptés en plus des pages vues (filtre « Events » dans le tableau de bord) :
+  `cv-download-en|fr|el`, `cv-print-…` (impression du CV si aucun PDF), `click-github`, `click-linkedin`, `click-email`, `click-phone`,
+  et `project-<nom>` / `project-<nom>-demo` / `project-<nom>-code` pour chaque projet (le nom vient du titre anglais).
+  Le code est dans `js/main.js` (fonctions `track` et `initTracking`).
+- **Exclure tes propres visites** : ouvrir ton site avec `#toggle-goatcounter` à la fin de l'adresse, dans chaque navigateur utilisé.
+- Les mentions légales (`legal.html`, clés `legal.data.*` et `legal.third.*` de `js/i18n.js`) décrivent cette mesure d'audience :
+  les modifier si l'outil change.
 
 ## Fins de ligne
 
