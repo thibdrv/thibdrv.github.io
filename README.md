@@ -76,7 +76,7 @@ Les visites sont comptées avec [GoatCounter](https://www.goatcounter.com/), san
 Tableau de bord : <https://thibauddrv.goatcounter.com> (compte personnel, connexion nécessaire).
 
 - Le script est ajouté en bas de `index.html`, `cv.html`, `legal.html` et `404.html`. Les visites depuis `localhost` sont ignorées automatiquement.
-- Des **événements** sont comptés en plus des pages vues (filtre « Events » dans le tableau de bord) :
+- Des **événements** sont comptés en plus des pages vues (leur emplacement exact dans le tableau de bord est à vérifier après les premiers clics) :
   `cv-download-en|fr|el`, `cv-print-…` (impression du CV si aucun PDF), `click-github`, `click-linkedin`, `click-email`, `click-phone`,
   et `project-<nom>` / `project-<nom>-demo` / `project-<nom>-code` pour chaque projet (le nom vient du titre anglais).
   Le code est dans `js/main.js` (fonctions `track` et `initTracking`).

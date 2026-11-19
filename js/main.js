@@ -326,7 +326,7 @@
   window.addEventListener("beforeprint", updatePrintDate);
 
   /* Statistiques de visite (GoatCounter, sans cookie) : on compte aussi les actions utiles.
-     Les noms ci-dessous apparaissent dans le tableau de bord GoatCounter (filtre « Events »).
+     Les noms ci-dessous sont ceux des événements dans le tableau de bord GoatCounter.
      Sans le script GoatCounter (bloqueur, hors ligne), rien ne se passe. */
   function track(name) {
     try {
