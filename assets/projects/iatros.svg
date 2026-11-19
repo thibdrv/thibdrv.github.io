@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Online booking of a medical appointment">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6f1f3"/><stop offset="1" stop-color="#f6f0e2"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9d3dc"/><stop offset="1" stop-color="#6fb0be"/></linearGradient>
+    <clipPath id="av"><circle cx="229" cy="172" r="34"/></clipPath>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- mer méditerranée -->
+  <rect y="530" width="800" height="70" fill="url(#sea)"/>
+  <g stroke="#fff" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round">
+    <path d="M30 560 q18 -10 36 0 t36 0 t36 0"/><path d="M300 576 q18 -10 36 0 t36 0 t36 0 t36 0"/><path d="M590 558 q18 -10 36 0 t36 0 t36 0"/>
+  </g>
+
+  <!-- fenêtre du site -->
+  <rect x="100" y="52" width="600" height="430" rx="16" fill="#fff" stroke="#0b0b0b" stroke-opacity="0.16" stroke-width="1.4"/>
+  <path d="M100 68 a16 16 0 0 1 16 -16 h568 a16 16 0 0 1 16 16 V96 H100 Z" fill="#eef3f4"/>
+  <path d="M100 96 H700" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="132" cy="74" r="6" fill="#e5877f"/><circle cx="152" cy="74" r="6" fill="#e8c46a"/><circle cx="172" cy="74" r="6" fill="#7fc79a"/>
+  <rect x="210" y="62" width="300" height="24" rx="12" fill="#fff" stroke="#0b0b0b" stroke-opacity="0.12"/>
+  <text x="226" y="79" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#6a7a80">iatros</text>
+
+  <!-- fiche médecin -->
+  <rect x="124" y="112" width="210" height="340" rx="12" fill="#f7fafb" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="229" cy="172" r="34" fill="#cfe3e8"/>
+  <g clip-path="url(#av)"><circle cx="229" cy="162" r="13" fill="#7aa5b3"/><ellipse cx="229" cy="208" rx="30" ry="24" fill="#7aa5b3"/></g>
+  <rect x="164" y="226" width="130" height="10" rx="5" fill="#0b0b0b" fill-opacity="0.8"/>
+  <rect x="184" y="246" width="90" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="179" y="268" width="100" height="22" rx="11" fill="#d3ecee"/>
+  <rect x="226" y="274" width="6" height="10" fill="#1f8a8f"/><rect x="224" y="276" width="10" height="6" fill="#1f8a8f"/>
+  <g fill="#e8b84a"><circle cx="201" cy="312" r="4.5"/><circle cx="215" cy="312" r="4.5"/><circle cx="229" cy="312" r="4.5"/><circle cx="243" cy="312" r="4.5"/><circle cx="257" cy="312" r="4.5" fill-opacity="0.35"/></g>
+  <path d="M144 332 H314" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <rect x="144" y="346" width="150" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.14"/>
+  <rect x="144" y="366" width="120" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.14"/>
+  <rect x="144" y="386" width="140" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.14"/>
+  <circle cx="152" cy="420" r="6" fill="#1f8a8f" fill-opacity="0.8"/><rect x="166" y="416" width="100" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.22"/>
+
+  <!-- calendrier -->
+  <rect x="352" y="116" width="110" height="14" rx="7" fill="#0b0b0b" fill-opacity="0.8"/>
+  <path d="M640 118 l-6 6 l6 6 M664 118 l6 6 l-6 6" stroke="#0b0b0b" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="356" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="402" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="448" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="494" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="540" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="586" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="632" y="148" width="22" height="6" rx="3" fill="#0b0b0b" fill-opacity="0.25"/>
+  <circle cx="367" cy="184" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="413" cy="184" r="15" fill="#d3ecee"/>
+  <circle cx="459" cy="184" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="505" cy="184" r="15" fill="#d3ecee"/>
+  <circle cx="551" cy="184" r="15" fill="#d3ecee"/>
+  <circle cx="597" cy="184" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="643" cy="184" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="367" cy="218" r="15" fill="#d3ecee"/>
+  <circle cx="413" cy="218" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="459" cy="218" r="15" fill="#d3ecee"/>
+  <circle cx="505" cy="218" r="15" fill="#d3ecee"/>
+  <circle cx="551" cy="218" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="597" cy="218" r="15" fill="#d3ecee"/>
+  <circle cx="643" cy="218" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="367" cy="252" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="413" cy="252" r="15" fill="#d3ecee"/>
+  <circle cx="459" cy="252" r="15" fill="#1f8a8f"/>
+  <circle cx="505" cy="252" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="551" cy="252" r="15" fill="#d3ecee"/>
+  <circle cx="597" cy="252" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="643" cy="252" r="15" fill="#d3ecee"/>
+  <circle cx="367" cy="286" r="15" fill="#d3ecee"/>
+  <circle cx="413" cy="286" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="459" cy="286" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="505" cy="286" r="15" fill="#d3ecee"/>
+  <circle cx="551" cy="286" r="15" fill="#d3ecee"/>
+  <circle cx="597" cy="286" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+  <circle cx="643" cy="286" r="15" stroke="#0b0b0b" stroke-opacity="0.1"/>
+
+  <!-- créneaux horaires -->
+  <rect x="352" y="328" width="80" height="8" rx="4" fill="#0b0b0b" fill-opacity="0.25"/>
+  <rect x="352" y="346" width="98" height="34" rx="17" stroke="#1f8a8f" stroke-width="1.6"/>
+  <rect x="460" y="346" width="98" height="34" rx="17" fill="#1f8a8f"/>
+  <rect x="568" y="346" width="98" height="34" rx="17" stroke="#1f8a8f" stroke-width="1.6"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="401" y="368" fill="#1f8a8f">09:30</text><text x="509" y="368" fill="#fff">10:15</text><text x="617" y="368" fill="#1f8a8f">11:00</text>
+  </g>
+
+  <!-- bouton réserver -->
+  <rect x="352" y="400" width="314" height="44" rx="22" fill="#0b0b0b"/>
+  <text x="509" y="428" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="1.5" text-anchor="middle" fill="#f4f3ef">BOOK</text>
+
+  <!-- croix médicale -->
+  <circle cx="100" cy="64" r="29" fill="#1f8a8f"/>
+  <g transform="translate(100 65) scale(0.86)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <!-- bâton -->
+    <path d="M0 -22 V23" stroke-width="2.6"/>
+    <circle cx="0" cy="-23" r="2.8" fill="#fff" stroke="none"/>
+    <!-- ailes -->
+    <g fill="#fff" stroke="none">
+      <path d="M-2 -14 C-8 -22 -18 -22 -25 -17 C-19 -16 -15 -14 -11 -12 C-16 -12 -20 -10 -22 -6 C-15 -8 -9 -8 -2 -9 Z"/>
+      <path d="M2 -14 C8 -22 18 -22 25 -17 C19 -16 15 -14 11 -12 C16 -12 20 -10 22 -6 C15 -8 9 -8 2 -9 Z"/>
+    </g>
+    <!-- serpents entrelacés -->
+    <g fill="none" stroke-width="2.6">
+      <path d="M-7 -9 C9 -8 10 0 0 2.5 C-10 5 -10 12 0 14 C7 15.5 9 19 4 22.5"/>
+      <path d="M7 -9 C-9 -8 -10 0 0 2.5 C10 5 10 12 0 14 C-7 15.5 -9 19 -4 22.5"/>
+    </g>
+    <circle cx="-7.4" cy="-9.4" r="2.3" fill="#fff" stroke="none"/><circle cx="7.4" cy="-9.4" r="2.3" fill="#fff" stroke="none"/>
+  </g>
+
+  <!-- rendez-vous confirmé -->
+  <g transform="rotate(-3 640 486)">
+    <rect x="548" y="454" width="196" height="64" rx="14" fill="#fff" stroke="#0b0b0b" stroke-opacity="0.14" stroke-width="1.4"/>
+    <circle cx="586" cy="486" r="17" fill="#2fa36b"/>
+    <path d="M578 486 l6 6 l12 -13" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="614" y="472" width="104" height="9" rx="4.5" fill="#0b0b0b" fill-opacity="0.8"/>
+    <rect x="614" y="490" width="72" height="7" rx="3.5" fill="#0b0b0b" fill-opacity="0.25"/>
+  </g>
+</svg>

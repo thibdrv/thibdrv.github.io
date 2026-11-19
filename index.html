@@ -19,12 +19,13 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:image" content="https://thibdrv.github.io/assets/og-image.jpg">
   <link rel="canonical" href="https://thibdrv.github.io/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip.link">Skip to content</a>
 
   <header class="header" id="header">
     <a href="#accueil" class="logo">THIBAUD DERVILLE</a>
@@ -46,7 +47,7 @@
     <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
     <!-- HOME -->
     <section class="hero" id="accueil">
@@ -84,7 +85,7 @@
       <div class="hero__stack reveal">
         <span class="hero__stack-label" data-i18n="hero.stack">Tools I work with</span>
         <ul>
-          <li>PHP</li><li>Python</li><li>JavaScript</li><li>SQL</li><li>Power BI</li><li>pandas</li><li>Streamlit</li><li>Claude</li>
+          <li>PHP</li><li>Python</li><li>JavaScript</li><li>SQL</li><li>Power BI</li><li>pandas</li><li>Git</li><li>Claude</li><li class="hero__stack-more" data-i18n="hero.stack.more">and many others</li>
         </ul>
       </div>
     </section>
@@ -100,9 +101,13 @@
         <li class="timeline__item reveal">
           <span class="timeline__period" data-i18n="path.army.period">6 years</span>
           <div class="timeline__body">
-            <h3 data-i18n="path.army.title">French Army — Paratrooper, Team Leader</h3>
+            <h3 data-i18n="path.army.title">French Army, Paratrooper and Team Leader</h3>
             <p class="timeline__place">Carcassonne</p>
             <p class="timeline__text" data-i18n="path.army.text">Six years of service as a paratrooper, then team leader. I worked in Africa and in the French overseas territories, in international settings&nbsp;&nbsp;: discipline, responsibility, stress management and team cohesion.</p>
+            <div class="skills">
+              <span class="skills__label" data-i18n="path.skills.label">Skills acquired</span>
+              <div class="skill-groups" data-i18n-groups="path.army.skills"></div>
+            </div>
           </div>
         </li>
 
@@ -111,12 +116,10 @@
           <div class="timeline__body">
             <h3 data-i18n="path.bts.title">Associate Degree in Web Development</h3>
             <p class="timeline__place" data-i18n="path.bts.place">Toulouse</p>
-            <p class="timeline__text" data-i18n="path.bts.text">Where my career in tech began&nbsp;&nbsp;: a comprehensive training in designing, building and securing web applications.</p>
+            <p class="timeline__text" data-i18n="path.bts.text">Where my career in tech began&nbsp;&nbsp;: a comprehensive degree in designing, building and securing full-stack web applications.</p>
             <div class="skills">
               <span class="skills__label" data-i18n="path.skills.label">Skills acquired</span>
-              <ul class="skills__list" data-i18n-list="path.bts.skills">
-                <li>Full-stack development</li><li>Kanban</li><li>Agile methods</li><li>System architecture</li><li>Web security</li><li>GDPR</li>
-              </ul>
+              <div class="skill-groups" data-i18n-groups="path.bts.skills"></div>
             </div>
           </div>
         </li>
@@ -129,9 +132,7 @@
             <p class="timeline__text" data-i18n="path.bachelor.text">A data-focused degree built on statistical rigor&nbsp;&nbsp;: collecting, cleaning, analysing and visualising data to turn it into clear insights that support decision-making.</p>
             <div class="skills">
               <span class="skills__label" data-i18n="path.skills.label">Skills acquired</span>
-              <ul class="skills__list" data-i18n-list="path.bachelor.skills">
-                <li>Descriptive &amp; inferential statistics</li><li>Machine learning</li><li>SQL</li><li>Power BI</li><li>Python</li><li>Seaborn</li><li>Matplotlib</li><li>Geomatics</li>
-              </ul>
+              <div class="skill-groups" data-i18n-groups="path.bachelor.skills"></div>
             </div>
           </div>
         </li>
@@ -144,9 +145,7 @@
             <p class="timeline__text" data-i18n="path.now.text">Always in learning mode&nbsp;&nbsp;: I love to learn, I am curious about every new technology and I always want to know more. I grow through hands-on projects, gathered below.</p>
             <div class="skills">
               <span class="skills__label" data-i18n="path.now.skills.label">Currently learning</span>
-              <ul class="skills__list" data-i18n-list="path.now.skills">
-                <li>Agentic AI</li><li>Claude</li><li>Local LLMs</li>
-              </ul>
+              <div class="skill-groups" data-i18n-groups="path.now.skills"></div>
             </div>
           </div>
         </li>
@@ -159,8 +158,8 @@
       <ul class="strengths reveal" id="strengths">
         <li class="strength" tabindex="0">
           <span class="strength__num">01</span>
-          <span class="strength__word" data-i18n="values.rigor">Rigor</span>
-          <p class="strength__desc" data-i18n="values.rigor.desc">Precise, disciplined work, from field operations to clean code.</p>
+          <span class="strength__word" data-i18n="values.leadership">Leadership</span>
+          <p class="strength__desc" data-i18n="values.leadership.desc">Six years leading a team in demanding environments.</p>
         </li>
         <li class="strength" tabindex="0">
           <span class="strength__num">02</span>
@@ -169,33 +168,23 @@
         </li>
         <li class="strength" tabindex="0">
           <span class="strength__num">03</span>
-          <span class="strength__word" data-i18n="values.leadership">Leadership</span>
-          <p class="strength__desc" data-i18n="values.leadership.desc">Six years leading a team in demanding environments.</p>
+          <span class="strength__word" data-i18n="values.rigor">Rigor</span>
+          <p class="strength__desc" data-i18n="values.rigor.desc">Precise, disciplined work, from field operations to clean code.</p>
         </li>
         <li class="strength" tabindex="0">
           <span class="strength__num">04</span>
-          <span class="strength__word" data-i18n="values.curiosity">Technical curiosity</span>
-          <p class="strength__desc" data-i18n="values.curiosity.desc">Always testing new tools, from agentic AI to local LLMs.</p>
-        </li>
-        <li class="strength" tabindex="0">
-          <span class="strength__num">05</span>
-          <span class="strength__word" data-i18n="values.adaptability">Adaptability</span>
-          <p class="strength__desc" data-i18n="values.adaptability.desc">Africa, overseas territories, new countries&nbsp;: I adapt fast.</p>
-        </li>
-        <li class="strength" tabindex="0">
-          <span class="strength__num">06</span>
-          <span class="strength__word" data-i18n="values.resilience">Resilience</span>
-          <p class="strength__desc" data-i18n="values.resilience.desc">Used to pressure, I keep a clear head when it counts.</p>
-        </li>
-        <li class="strength" tabindex="0">
-          <span class="strength__num">07</span>
           <span class="strength__word" data-i18n="values.autonomy">Autonomy</span>
           <p class="strength__desc" data-i18n="values.autonomy.desc">I take initiative and carry a project from idea to deployment.</p>
         </li>
         <li class="strength" tabindex="0">
-          <span class="strength__num">08</span>
-          <span class="strength__word" data-i18n="values.responsibility">Sense of responsibility</span>
-          <p class="strength__desc" data-i18n="values.responsibility.desc">I own my work and stand behind the results.</p>
+          <span class="strength__num">05</span>
+          <span class="strength__word" data-i18n="values.curiosity">Technical curiosity</span>
+          <p class="strength__desc" data-i18n="values.curiosity.desc">Always testing new tools, from agentic AI to local LLMs.</p>
+        </li>
+        <li class="strength" tabindex="0">
+          <span class="strength__num">06</span>
+          <span class="strength__word" data-i18n="values.adaptability">Adaptability</span>
+          <p class="strength__desc" data-i18n="values.adaptability.desc">Africa, overseas territories, new countries&nbsp;: I adapt fast.</p>
         </li>
       </ul>
 

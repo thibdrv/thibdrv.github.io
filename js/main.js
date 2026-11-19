@@ -65,6 +65,8 @@
               ${p.year ? `<span class="card__year">${esc(p.year)}</span>` : ""}
             </div>
             <p class="card__desc">${esc(loc(p.description))}</p>
+            ${p.result ? `<p class="card__result">${esc(loc(p.result))}</p>` : ""}
+            ${p.note ? `<p class="card__note">${esc(loc(p.note))}</p>` : ""}
             ${tags ? `<ul class="card__tags">${tags}</ul>` : ""}
             ${links}
           </${tag}>
@@ -219,12 +221,16 @@
       })
       .join("");
 
-    // Visible uniquement à l'impression : le lien de la page (remplace l'en-tête/pied de page du navigateur)
-    const pageUrl = location.href.split(/[?#]/)[0];
+    // Visible uniquement à l'impression : lien du CV (adresse officielle du site) + date.
+    // Avec ?pdf=1 (génération du PDF fixe) la date devient « Mis à jour le ».
+    const base = typeof SITE_URL !== "undefined" && SITE_URL ? String(SITE_URL).replace(/\/?$/, "/") : "";
+    const pageUrl = base ? base + "cv.html" : location.href.split(/[?#]/)[0];
     const linkPart = /^https?:\/\//i.test(pageUrl)
       ? `<span class="cv-print-foot__link"><a href="${esc(pageUrl)}">${esc(pageUrl)}</a></span>`
       : "<span></span>";
-    const printLink = `<p class="cv-print-foot">${linkPart}<span class="cv-print-foot__date">${esc(t("cv.print.downloaded"))} <time id="cv-print-date"></time></span></p>`;
+    const isPdf = new URLSearchParams(location.search).has("pdf");
+    const dateLabel = t(isPdf ? "cv.print.updated" : "cv.print.downloaded");
+    const printLink = `<p class="cv-print-foot">${linkPart}<span class="cv-print-foot__date">${esc(dateLabel)} <time id="cv-print-date"></time></span></p>`;
 
     root.innerHTML = `
       <header class="cv-doc__head">
@@ -238,7 +244,7 @@
         <aside class="cv-doc__side">
           <section class="cv-sec"><h3 class="cv-sec__title">${esc(t("cv.sec.contact"))}</h3><ul class="cv-contact">${contact}</ul></section>
           <section class="cv-sec"><h3 class="cv-sec__title">${esc(t("cv.sec.education"))}</h3><ul class="cv-list">${education}</ul></section>
-          <section class="cv-sec"><h3 class="cv-sec__title">${esc(t("cv.sec.skills"))}</h3><ul class="cv-list">${skills}</ul></section>
+          <section class="cv-sec"><h3 class="cv-sec__title">${esc(t("cv.sec.skills"))}</h3><ul class="cv-list cv-list--skills">${skills}</ul></section>
           <section class="cv-sec"><h3 class="cv-sec__title">${esc(t("cv.sec.languages"))}</h3><ul class="cv-list cv-list--inline">${languages}</ul></section>
         </aside>
         <div class="cv-doc__main">
@@ -249,23 +255,39 @@
       ${printLink}`;
   }
 
-  let cvDownloadReady = false;
-  function initCvDownload() {
+  /* PDF à télécharger : CV.file peut être un chemin unique ou { en, fr, el } (un PDF par langue) */
+  function cvFileFor(lang) {
+    if (typeof CV === "undefined" || !CV.file) return "";
+    const f = typeof CV.file === "string" ? CV.file : CV.file[lang] || CV.file.en || "";
+    const file = String(f).trim();
+    return file && !/^\s*(javascript|data|vbscript):/i.test(file) ? file : "";
+  }
+
+  let cvDownloadBound = false;
+  function updateCvDownload() {
     const dl = document.getElementById("cv-download");
-    if (!dl || cvDownloadReady) return;
-    cvDownloadReady = true;
-
-    const file = typeof CV !== "undefined" && CV.file ? String(CV.file).trim() : "";
+    if (!dl) return;
     const hint = document.getElementById("cv-hint");
+    const file = cvFileFor(window.i18n.lang);
 
-    if (file && !/^\s*(javascript|data|vbscript):/i.test(file)) {
-      // PDF fourni : vrai téléchargement
+    if (file) {
+      // PDF fourni : vrai téléchargement, dans la langue choisie
       dl.setAttribute("href", file);
-      dl.setAttribute("download", CV.filename || "");
+      dl.setAttribute("download", file.split("/").pop());
+      dl.dataset.mode = "file";
       if (hint) hint.hidden = true;
     } else {
-      // Pas de PDF : on ouvre la fenêtre d'impression (mise en page A4 prévue), « Enregistrer au format PDF »
+      // Pas de PDF : on ouvre l'impression (mise en page A4 prévue), « Enregistrer au format PDF »
+      dl.setAttribute("href", "#");
+      dl.removeAttribute("download");
+      dl.dataset.mode = "print";
+      if (hint) hint.hidden = false;
+    }
+
+    if (!cvDownloadBound) {
+      cvDownloadBound = true;
       dl.addEventListener("click", (e) => {
+        if (dl.dataset.mode !== "print") return;
         e.preventDefault();
         updatePrintDate();
         window.print();
@@ -290,7 +312,7 @@
   function renderCv() {
     renderCvDocument();
     updatePrintDate();
-    initCvDownload();
+    updateCvDownload();
   }
   window.addEventListener("beforeprint", updatePrintDate);
 

@@ -34,41 +34,47 @@
       "hero.p3": "Automation & AI",
       "hero.p4": "Team leadership",
       "hero.stack": "Tools I work with",
+      "hero.stack.more": "and many others",
+      "skip.link": "Skip to content",
+      "nf.meta.title": "Page not found — Thibaud Derville",
+      "nf.title": "Page not found",
+      "nf.text": "The page you are looking for does not exist or has moved.",
+      "nf.back": "Back to home",
       "hero.badge": "WEB DEVELOPER • DATA ANALYST • WEB DEVELOPER • DATA ANALYST • ",
 
       "path.title": "About me",
       "path.army.period": "6 years",
-      "path.army.title": "French Army — Paratrooper, Team Leader",
+      "path.army.title": "French Army, Paratrooper and Team Leader",
       "path.army.text":
         "Six years of service as a paratrooper, then team leader. I worked in Africa and in the French overseas territories, in international settings : discipline, responsibility, stress management and team cohesion.",
+      "path.army.skills": [
+        { label: "Leadership", items: ["Team leadership", "Mission planning", "Responsibility"] },
+        { label: "Operations", items: ["Safety management", "Equipment management", "Fast-changing environments"] },
+        { label: "Communication", items: ["Team cohesion", "International settings"] },
+        { label: "Personal qualities", items: ["Quick learning", "Adaptability"] }
+      ],
       "path.bts.period": "New beginning",
       "path.bts.title": "Associate Degree in Web Development",
       "path.bts.place": "Toulouse",
       "path.bachelor.place": "Paris",
       "path.bts.text":
-        "Where my career in tech began : a comprehensive training in designing, building and securing web applications.",
+        "Where my career in tech began : a comprehensive degree in designing, building and securing full-stack web applications.",
       "path.skills.label": "Skills acquired",
       "path.bts.skills": [
-        "Full-stack development",
-        "Kanban",
-        "Agile methods",
-        "System architecture",
-        "Web security",
-        "GDPR"
+        { label: "Development", items: ["Full-stack development", "PHP", "JavaScript", "HTML5", "CSS3", "API", "Responsive design"] },
+        { label: "Architecture and data", items: ["System architecture", "Layered architecture", "Relational databases (MySQL, MariaDB)"] },
+        { label: "Security and compliance", items: ["Web security", "GDPR"] },
+        { label: "Methods and tools", items: ["Agile methods", "Kanban", "Git", "GitHub", "Technical documentation"] }
       ],
       "path.bachelor.period": "Further studies",
       "path.bachelor.title": "Bachelor in Data Analysis",
       "path.bachelor.text":
         "A data-focused degree built on statistical rigor : collecting, cleaning, analysing and visualising data to turn it into clear insights that support decision-making.",
       "path.bachelor.skills": [
-        "Descriptive & inferential statistics",
-        "Machine learning",
-        "SQL",
-        "Power BI",
-        "Python",
-        "Seaborn",
-        "Matplotlib",
-        "Geomatics"
+        { label: "Analysis and machine learning", items: ["Descriptive and inferential statistics", "Machine learning", "Scikit-learn", "Exploratory data analysis"] },
+        { label: "Programming and data", items: ["Python", "pandas", "SQL", "Web scraping"] },
+        { label: "Business intelligence", items: ["Power BI", "DAX", "Excel", "KPIs and dashboards"] },
+        { label: "Visualisation and preparation", items: ["Data cleaning", "Data visualisation", "Seaborn", "Matplotlib", "Geomatics"] }
       ],
       "path.now.period": "Today",
       "path.now.title": "Always learning",
@@ -76,7 +82,10 @@
       "path.now.text":
         "Always in learning mode : I love to learn, I am curious about every new technology and I always want to know more. I grow through hands-on projects, gathered below.",
       "path.now.skills.label": "Currently learning",
-      "path.now.skills": ["Agentic AI", "Claude", "Local LLMs"],
+      "path.now.skills": [
+        { label: "AI tools", items: ["Claude Code", "Ollama", "Local LLMs"] },
+        { label: "Automation", items: ["Agentic AI", "AI-assisted automation", "Automated data pipelines"] }
+      ],
 
       "values.title": "Strengths",
       "values.rigor": "Rigor",
@@ -84,17 +93,13 @@
       "values.leadership": "Leadership",
       "values.curiosity": "Technical curiosity",
       "values.adaptability": "Adaptability",
-      "values.resilience": "Resilience",
       "values.autonomy": "Autonomy",
-      "values.responsibility": "Sense of responsibility",
       "values.rigor.desc": "Precise, disciplined work, from field operations to clean code.",
       "values.team.desc": "Team leader : I know how to bring out the best in a group.",
       "values.leadership.desc": "Six years leading a team in demanding environments.",
       "values.curiosity.desc": "Always testing new tools, from agentic AI to local LLMs.",
       "values.adaptability.desc": "Africa, overseas territories, new countries : I adapt fast.",
-      "values.resilience.desc": "Used to pressure, I keep a clear head when it counts.",
       "values.autonomy.desc": "I take initiative and carry a project from idea to deployment.",
-      "values.responsibility.desc": "I own my work and stand behind the results.",
 
       "interests.title": "Outside of work",
       "interests.sport.title": "Sport",
@@ -131,6 +136,7 @@
       "cv.download": "Download CV",
       "cv.hint": "In the print window, choose “Save as PDF”.",
       "cv.print.downloaded": "Downloaded on",
+      "cv.print.updated": "Updated on",
       "cv.sec.contact": "Contact",
       "cv.sec.profile": "Profile",
       "cv.sec.education": "Education",
@@ -163,7 +169,7 @@
       "legal.data.t": "Personal data and cookies",
       "legal.data.p": "This website does not use cookies for tracking, advertising or audience measurement, and does not collect personal data. Your language choice is saved only in your own browser (local storage) to remember your preference\u00a0; it is never sent to a server. If you write to me by email, your address and message are used only to reply to you. In accordance with the GDPR, you can request access, correction or deletion of your data at any time by email.",
       "legal.third.t": "Third-party services",
-      "legal.third.p": "The fonts (Inter and Cormorant Garamond) are loaded from Google Fonts, which may receive your IP address. Links to LinkedIn, GitHub and project demos lead to external websites with their own policies.",
+      "legal.third.p": "The fonts (Inter and Cormorant Garamond) are hosted on this website: no request is sent to Google or any other third party to display them. Links to LinkedIn, GitHub and project demos lead to external websites with their own policies.",
       "legal.ip.t": "Intellectual property",
       "legal.ip.p": "Unless stated otherwise, the texts, illustrations and design of this website belong to Thibaud Derville. Reproduction without permission is prohibited. The flag of Cyprus comes from Wikimedia Commons (public domain). The fonts are distributed under the SIL Open Font License.",
       "legal.updated": "Last updated\u00a0: November 2026"
@@ -190,41 +196,47 @@
       "hero.p3": "Automatisation & IA",
       "hero.p4": "Leadership d’équipe",
       "hero.stack": "Outils que j’utilise",
+      "hero.stack.more": "et bien d’autres",
+      "skip.link": "Aller au contenu",
+      "nf.meta.title": "Page introuvable — Thibaud Derville",
+      "nf.title": "Page introuvable",
+      "nf.text": "La page que vous cherchez n’existe pas ou a été déplacée.",
+      "nf.back": "Retour à l’accueil",
       "hero.badge": "DÉVELOPPEUR WEB • DATA ANALYST • DÉVELOPPEUR WEB • DATA ANALYST • ",
 
       "path.title": "À propos de moi",
       "path.army.period": "6 ans",
-      "path.army.title": "Armée de Terre — Parachutiste, chef d’équipe",
+      "path.army.title": "Armée de Terre, parachutiste et chef d’équipe",
       "path.army.text":
         "Six années d’engagement en tant que parachutiste, puis chef d’équipe. J’ai travaillé en Afrique et en Outre-mer, dans des contextes internationaux : discipline, sens des responsabilités, gestion du stress et cohésion de groupe.",
+      "path.army.skills": [
+        { label: "Leadership", items: ["Leadership d’équipe", "Planification de missions", "Sens des responsabilités"] },
+        { label: "Opérations", items: ["Gestion de la sécurité", "Gestion du matériel", "Environnements changeants"] },
+        { label: "Communication", items: ["Cohésion d’équipe", "Contexte international"] },
+        { label: "Qualités personnelles", items: ["Apprentissage rapide", "Adaptabilité"] }
+      ],
       "path.bts.period": "Nouveau départ",
       "path.bts.title": "BTS Développement Web",
       "path.bts.place": "Toulouse",
       "path.bachelor.place": "Paris",
       "path.bts.text":
-        "Le point de départ de ma carrière dans le numérique : une formation complète pour concevoir, développer et sécuriser des applications web.",
+        "Le point de départ de ma carrière dans le numérique : un diplôme complet pour concevoir, développer et sécuriser des applications web full stack.",
       "path.skills.label": "Compétences acquises",
       "path.bts.skills": [
-        "Développement full stack",
-        "Kanban",
-        "Méthodes agiles",
-        "Architecture système",
-        "Sécurité web",
-        "RGPD"
+        { label: "Développement", items: ["Développement full stack", "PHP", "JavaScript", "HTML5", "CSS3", "API", "Design responsive"] },
+        { label: "Architecture et données", items: ["Architecture système", "Architecture en couches", "Bases de données relationnelles (MySQL, MariaDB)"] },
+        { label: "Sécurité et conformité", items: ["Sécurité web", "RGPD"] },
+        { label: "Méthodes et outils", items: ["Méthodes agiles", "Kanban", "Git", "GitHub", "Documentation technique"] }
       ],
       "path.bachelor.period": "Poursuite d’études",
       "path.bachelor.title": "Licence Data Analyse",
       "path.bachelor.text":
         "Un cursus orienté données et fondé sur la rigueur statistique : collecter, nettoyer, analyser et visualiser la donnée pour en tirer des enseignements clairs au service de la décision.",
       "path.bachelor.skills": [
-        "Statistiques descriptives et inférentielles",
-        "Machine learning",
-        "SQL",
-        "Power BI",
-        "Python",
-        "Seaborn",
-        "Matplotlib",
-        "Géomatique"
+        { label: "Analyse et machine learning", items: ["Statistiques descriptives et inférentielles", "Machine learning", "Scikit-learn", "Analyse exploratoire"] },
+        { label: "Programmation et données", items: ["Python", "pandas", "SQL", "Web scraping"] },
+        { label: "Business intelligence", items: ["Power BI", "DAX", "Excel", "KPI et tableaux de bord"] },
+        { label: "Visualisation et préparation", items: ["Nettoyage de données", "Visualisation de données", "Seaborn", "Matplotlib", "Géomatique"] }
       ],
       "path.now.period": "Aujourd’hui",
       "path.now.title": "Toujours en apprentissage",
@@ -232,7 +244,10 @@
       "path.now.text":
         "Toujours en phase d’apprentissage : j’aime apprendre, je suis curieux de toutes les nouvelles technologies et désireux d’en savoir toujours plus. Je progresse à travers des projets concrets, réunis ci-dessous.",
       "path.now.skills.label": "En cours d’apprentissage",
-      "path.now.skills": ["IA agentique", "Claude", "LLM locaux"],
+      "path.now.skills": [
+        { label: "Outils d’IA", items: ["Claude Code", "Ollama", "LLM locaux"] },
+        { label: "Automatisation", items: ["IA agentique", "Automatisation assistée par IA", "Pipelines de données automatisés"] }
+      ],
 
       "values.title": "Mes qualités",
       "values.rigor": "Rigueur",
@@ -240,17 +255,13 @@
       "values.leadership": "Leadership",
       "values.curiosity": "Curiosité technique",
       "values.adaptability": "Adaptabilité",
-      "values.resilience": "Résilience",
       "values.autonomy": "Autonomie",
-      "values.responsibility": "Sens des responsabilités",
       "values.rigor.desc": "Un travail précis et discipliné, des opérations de terrain au code propre.",
       "values.team.desc": "Chef d’équipe, je sais faire émerger le meilleur d’un groupe.",
       "values.leadership.desc": "Six années à diriger une équipe dans des environnements exigeants.",
       "values.curiosity.desc": "Toujours à tester de nouveaux outils, de l’IA agentique aux LLM locaux.",
       "values.adaptability.desc": "Afrique, Outre-mer, nouveaux pays : je m’adapte vite.",
-      "values.resilience.desc": "Habitué à la pression, je garde la tête froide quand il le faut.",
       "values.autonomy.desc": "Je prends des initiatives et mène un projet de l’idée au déploiement.",
-      "values.responsibility.desc": "J’assume mon travail et m’engage sur les résultats.",
 
       "interests.title": "En dehors du travail",
       "interests.sport.title": "Sport",
@@ -287,6 +298,7 @@
       "cv.download": "Télécharger le CV",
       "cv.hint": "Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF ».",
       "cv.print.downloaded": "Téléchargé le",
+      "cv.print.updated": "Mis à jour le",
       "cv.sec.contact": "Contact",
       "cv.sec.profile": "Profil",
       "cv.sec.education": "Formation",
@@ -319,7 +331,7 @@
       "legal.data.t": "Données personnelles et cookies",
       "legal.data.p": "Ce site n’utilise aucun cookie de suivi, de publicité ou de mesure d’audience et ne collecte aucune donnée personnelle. Votre choix de langue est enregistré uniquement dans votre navigateur (stockage local) pour mémoriser votre préférence ; il n’est jamais envoyé à un serveur. Si vous m’écrivez par e-mail, votre adresse et votre message ne servent qu’à vous répondre. Conformément au RGPD, vous pouvez demander à tout moment l’accès, la rectification ou la suppression de vos données par e-mail.",
       "legal.third.t": "Services tiers",
-      "legal.third.p": "Les polices (Inter et Cormorant Garamond) sont chargées depuis Google Fonts, qui peut recevoir votre adresse IP. Les liens vers LinkedIn, GitHub et les démonstrations de projets mènent vers des sites externes soumis à leurs propres politiques.",
+      "legal.third.p": "Les polices (Inter et Cormorant Garamond) sont hébergées sur ce site : aucune requête n’est envoyée à Google ni à un autre tiers pour les afficher. Les liens vers LinkedIn, GitHub et les démonstrations de projets mènent vers des sites externes soumis à leurs propres politiques.",
       "legal.ip.t": "Propriété intellectuelle",
       "legal.ip.p": "Sauf mention contraire, les textes, illustrations et la conception de ce site sont la propriété de Thibaud Derville. Toute reproduction sans autorisation est interdite. Le drapeau de Chypre provient de Wikimedia Commons (domaine public). Les polices sont distribuées sous licence SIL Open Font.",
       "legal.updated": "Dernière mise à jour : novembre 2026"
@@ -346,41 +358,47 @@
       "hero.p3": "Αυτοματοποίηση & AI",
       "hero.p4": "Ηγεσία ομάδας",
       "hero.stack": "Εργαλεία που χρησιμοποιώ",
+      "hero.stack.more": "και πολλά άλλα",
+      "skip.link": "Μετάβαση στο περιεχόμενο",
+      "nf.meta.title": "Η σελίδα δεν βρέθηκε — Thibaud Derville",
+      "nf.title": "Η σελίδα δεν βρέθηκε",
+      "nf.text": "Η σελίδα που αναζητάτε δεν υπάρχει ή έχει μετακινηθεί.",
+      "nf.back": "Επιστροφή στην αρχική",
       "hero.badge": "ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ WEB • ΑΝΑΛΥΤΗΣ ΔΕΔΟΜΕΝΩΝ • PORTFOLIO • ",
 
       "path.title": "Σχετικά με εμένα",
       "path.army.period": "6 χρόνια",
-      "path.army.title": "Γαλλικός Στρατός Ξηράς — Αλεξιπτωτιστής, αρχηγός ομάδας",
+      "path.army.title": "Γαλλικός Στρατός Ξηράς, αλεξιπτωτιστής και αρχηγός ομάδας",
       "path.army.text":
         "Έξι χρόνια θητείας ως αλεξιπτωτιστής και στη συνέχεια ως αρχηγός ομάδας. Εργάστηκα στην Αφρική και στα υπερπόντια εδάφη της Γαλλίας, σε διεθνές περιβάλλον : πειθαρχία, υπευθυνότητα, διαχείριση άγχους και συνοχή της ομάδας.",
+      "path.army.skills": [
+        { label: "Ηγεσία", items: ["Ηγεσία ομάδας", "Σχεδιασμός αποστολών", "Αίσθηση ευθύνης"] },
+        { label: "Επιχειρήσεις", items: ["Διαχείριση ασφάλειας", "Διαχείριση εξοπλισμού", "Περιβάλλοντα που αλλάζουν γρήγορα"] },
+        { label: "Επικοινωνία", items: ["Συνοχή ομάδας", "Διεθνές περιβάλλον"] },
+        { label: "Προσωπικές ιδιότητες", items: ["Γρήγορη εκμάθηση", "Προσαρμοστικότητα"] }
+      ],
       "path.bts.period": "Νέα αρχή",
       "path.bts.title": "Associate Degree Ανάπτυξης Web",
       "path.bts.place": "Τουλούζη",
       "path.bachelor.place": "Παρίσι",
       "path.bts.text":
-        "Η αφετηρία της καριέρας μου στην τεχνολογία : ολοκληρωμένη εκπαίδευση στον σχεδιασμό, την ανάπτυξη και την ασφάλεια web εφαρμογών.",
+        "Η αφετηρία της καριέρας μου στην τεχνολογία : ένα ολοκληρωμένο πτυχίο στον σχεδιασμό, την ανάπτυξη και την ασφάλεια full-stack web εφαρμογών.",
       "path.skills.label": "Δεξιότητες που απέκτησα",
       "path.bts.skills": [
-        "Full-stack ανάπτυξη",
-        "Kanban",
-        "Ευέλικτες (Agile) μέθοδοι",
-        "Αρχιτεκτονική συστημάτων",
-        "Ασφάλεια web",
-        "GDPR"
+        { label: "Ανάπτυξη", items: ["Full-stack ανάπτυξη", "PHP", "JavaScript", "HTML5", "CSS3", "API", "Responsive design"] },
+        { label: "Αρχιτεκτονική και δεδομένα", items: ["Αρχιτεκτονική συστημάτων", "Αρχιτεκτονική επιπέδων", "Σχεσιακές βάσεις δεδομένων (MySQL, MariaDB)"] },
+        { label: "Ασφάλεια και συμμόρφωση", items: ["Ασφάλεια web", "GDPR"] },
+        { label: "Μέθοδοι και εργαλεία", items: ["Ευέλικτες (Agile) μέθοδοι", "Kanban", "Git", "GitHub", "Τεχνική τεκμηρίωση"] }
       ],
       "path.bachelor.period": "Συνέχεια σπουδών",
       "path.bachelor.title": "Πτυχίο Ανάλυσης Δεδομένων",
       "path.bachelor.text":
         "Ένα πρόγραμμα με επίκεντρο τα δεδομένα και τη στατιστική αυστηρότητα : συλλογή, καθαρισμός, ανάλυση και οπτικοποίηση δεδομένων για σαφή συμπεράσματα που στηρίζουν τις αποφάσεις.",
       "path.bachelor.skills": [
-        "Περιγραφική και επαγωγική στατιστική",
-        "Machine learning",
-        "SQL",
-        "Power BI",
-        "Python",
-        "Seaborn",
-        "Matplotlib",
-        "Γεωπληροφορική"
+        { label: "Ανάλυση και machine learning", items: ["Περιγραφική και επαγωγική στατιστική", "Machine learning", "Scikit-learn", "Διερευνητική ανάλυση δεδομένων"] },
+        { label: "Προγραμματισμός και δεδομένα", items: ["Python", "pandas", "SQL", "Web scraping"] },
+        { label: "Business intelligence", items: ["Power BI", "DAX", "Excel", "KPI και πίνακες ελέγχου"] },
+        { label: "Οπτικοποίηση και προετοιμασία", items: ["Καθαρισμός δεδομένων", "Οπτικοποίηση δεδομένων", "Seaborn", "Matplotlib", "Γεωπληροφορική"] }
       ],
       "path.now.period": "Σήμερα",
       "path.now.title": "Πάντα σε φάση μάθησης",
@@ -388,7 +406,10 @@
       "path.now.text":
         "Πάντα σε φάση μάθησης : μου αρέσει να μαθαίνω, είμαι περίεργος για κάθε νέα τεχνολογία και θέλω να μαθαίνω ολοένα περισσότερα. Εξελίσσομαι μέσα από πραγματικά έργα, που θα βρείτε παρακάτω.",
       "path.now.skills.label": "Μαθαίνω αυτή τη στιγμή",
-      "path.now.skills": ["Agentic AI", "Claude", "Τοπικά LLM"],
+      "path.now.skills": [
+        { label: "Εργαλεία AI", items: ["Claude Code", "Ollama", "Τοπικά LLM"] },
+        { label: "Αυτοματοποίηση", items: ["Agentic AI", "Αυτοματοποίηση με τεχνητή νοημοσύνη", "Αυτοματοποιημένες ροές δεδομένων"] }
+      ],
 
       "values.title": "Τα δυνατά μου σημεία",
       "values.rigor": "Ακρίβεια",
@@ -396,17 +417,13 @@
       "values.leadership": "Ηγεσία",
       "values.curiosity": "Τεχνική περιέργεια",
       "values.adaptability": "Προσαρμοστικότητα",
-      "values.resilience": "Ανθεκτικότητα",
       "values.autonomy": "Αυτονομία",
-      "values.responsibility": "Αίσθηση ευθύνης",
       "values.rigor.desc": "Ακριβής και πειθαρχημένη δουλειά, από τις επιχειρήσεις πεδίου έως τον καθαρό κώδικα.",
       "values.team.desc": "Ως αρχηγός ομάδας, ξέρω να αναδεικνύω το καλύτερο μιας ομάδας.",
       "values.leadership.desc": "Έξι χρόνια ηγεσίας μιας ομάδας σε απαιτητικά περιβάλλοντα.",
       "values.curiosity.desc": "Δοκιμάζω συνεχώς νέα εργαλεία, από το agentic AI έως τα τοπικά LLM.",
       "values.adaptability.desc": "Αφρική, υπερπόντια εδάφη, νέες χώρες : προσαρμόζομαι γρήγορα.",
-      "values.resilience.desc": "Συνηθισμένος στην πίεση, κρατώ την ψυχραιμία μου όταν χρειάζεται.",
       "values.autonomy.desc": "Παίρνω πρωτοβουλίες και οδηγώ ένα έργο από την ιδέα έως τη δημοσίευση.",
-      "values.responsibility.desc": "Αναλαμβάνω την ευθύνη της δουλειάς μου και των αποτελεσμάτων της.",
 
       "interests.title": "Εκτός δουλειάς",
       "interests.sport.title": "Άθληση",
@@ -443,6 +460,7 @@
       "cv.download": "Λήψη βιογραφικού",
       "cv.hint": "Στο παράθυρο εκτύπωσης, επιλέξτε «Αποθήκευση ως PDF».",
       "cv.print.downloaded": "Λήψη στις",
+      "cv.print.updated": "Ενημερώθηκε στις",
       "cv.sec.contact": "Επικοινωνία",
       "cv.sec.profile": "Προφίλ",
       "cv.sec.education": "Εκπαίδευση",
@@ -475,7 +493,7 @@
       "legal.data.t": "Προσωπικά δεδομένα και cookies",
       "legal.data.p": "Ο ιστότοπος δεν χρησιμοποιεί cookies παρακολούθησης, διαφήμισης ή μέτρησης επισκεψιμότητας και δεν συλλέγει προσωπικά δεδομένα. Η επιλογή γλώσσας αποθηκεύεται μόνο στο πρόγραμμα περιήγησής σας (τοπική αποθήκευση) για να θυμάται την προτίμησή σας· δεν αποστέλλεται ποτέ σε διακομιστή. Αν μου στείλετε email, η διεύθυνση και το μήνυμά σας χρησιμοποιούνται μόνο για να σας απαντήσω. Σύμφωνα με τον GDPR, μπορείτε ανά πάσα στιγμή να ζητήσετε πρόσβαση, διόρθωση ή διαγραφή των δεδομένων σας μέσω email.",
       "legal.third.t": "Υπηρεσίες τρίτων",
-      "legal.third.p": "Οι γραμματοσειρές (Inter και Cormorant Garamond) φορτώνονται από το Google Fonts, το οποίο μπορεί να λαμβάνει τη διεύθυνση IP σας. Οι σύνδεσμοι προς LinkedIn, GitHub και τις επιδείξεις έργων οδηγούν σε εξωτερικούς ιστότοπους με τις δικές τους πολιτικές.",
+      "legal.third.p": "Οι γραμματοσειρές (Inter και Cormorant Garamond) φιλοξενούνται σε αυτόν τον ιστότοπο : δεν αποστέλλεται κανένα αίτημα στη Google ή σε άλλον τρίτο για την εμφάνισή τους. Οι σύνδεσμοι προς LinkedIn, GitHub και τις επιδείξεις έργων οδηγούν σε εξωτερικούς ιστότοπους με τις δικές τους πολιτικές.",
       "legal.ip.t": "Πνευματική ιδιοκτησία",
       "legal.ip.p": "Εκτός αν αναφέρεται διαφορετικά, τα κείμενα, οι εικονογραφήσεις και ο σχεδιασμός του ιστότοπου ανήκουν στον Thibaud Derville. Απαγορεύεται η αναπαραγωγή χωρίς άδεια. Η σημαία της Κύπρου προέρχεται από το Wikimedia Commons (κοινό κτήμα). Οι γραμματοσειρές διανέμονται με άδεια SIL Open Font.",
       "legal.updated": "Τελευταία ενημέρωση\u00a0: Νοέμβριος 2026"
@@ -484,6 +502,16 @@
 
   const LANGS = Object.keys(TRANSLATIONS);
   let current = DEFAULT_LANG;
+
+  // ?lang=fr dans l'adresse force la langue (utile pour générer les PDF du CV)
+  function readUrlLang() {
+    try {
+      const v = new URLSearchParams(location.search).get("lang");
+      return LANGS.includes(v) ? v : null;
+    } catch (e) {
+      return null;
+    }
+  }
 
   function readStored() {
     try {
@@ -527,6 +555,29 @@
       );
     });
 
+    // Compétences par catégories : la clé pointe vers [{ label, items: [...] }, ...]
+    document.querySelectorAll("[data-i18n-groups]").forEach((box) => {
+      const groups = t(box.dataset.i18nGroups);
+      box.replaceChildren(
+        ...(Array.isArray(groups) ? groups : []).map((g) => {
+          const wrap = document.createElement("div");
+          wrap.className = "skill-group";
+          const title = document.createElement("span");
+          title.className = "skill-group__label";
+          title.textContent = g.label;
+          const ul = document.createElement("ul");
+          ul.className = "skills__list";
+          (g.items || []).forEach((txt) => {
+            const li = document.createElement("li");
+            li.textContent = txt;
+            ul.appendChild(li);
+          });
+          wrap.append(title, ul);
+          return wrap;
+        })
+      );
+    });
+
     // Chaque page peut avoir ses propres titre/description (data-title-key / data-desc-key sur <body>)
     document.title = t(document.body.dataset.titleKey || "meta.title");
     const meta = document.querySelector('meta[name="description"]');
@@ -553,7 +604,7 @@
     btn.addEventListener("click", () => setLang(btn.dataset.lang));
   });
 
-  current = readStored() || DEFAULT_LANG;
+  current = readUrlLang() || readStored() || DEFAULT_LANG;
   apply();
 
   window.i18n = { t, loc, setLang, get lang() { return current; } };
