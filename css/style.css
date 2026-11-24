@@ -1534,3 +1534,38 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   /* boutons de même largeur (Windows / Linux) : le lien reste bien centré sous les deux */
   .dl-item__buttons { flex-direction: column; align-items: stretch; }
 }
+
+/* Accueil : disponibilité, juste sous le titre */
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(16px, 1.8vw, 24px);
+  padding: 8px 18px 8px 14px;
+  border: 1px solid rgba(11, 11, 11, 0.28);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #0b0b0b;
+}
+.hero__status-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0b0b0b;
+}
+@media (max-width: 820px) {
+  .hero__status { font-size: 12.5px; padding: 7px 14px 7px 12px; }
+}
+
+/* Point de disponibilité : clignotement doux avec une onde (désactivé si le visiteur réduit les animations) */
+.hero__status-dot { animation: status-blink 1.7s ease-in-out infinite; }
+@keyframes status-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(11, 11, 11, 0.4); }
+  50% { opacity: 0.25; box-shadow: 0 0 0 7px rgba(11, 11, 11, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__status-dot { animation: none; }
+}
