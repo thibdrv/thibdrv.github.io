@@ -11,6 +11,7 @@ Site trilingue : anglais (par défaut), français et grec.
 - `robots.txt`, `sitemap.xml` : référencement
 - `tools/build.py` : génère les parties statiques et les PDF du CV (voir ci-dessous) ; `tools/export.html` en est la page technique
 - `.github/workflows/check.yml` : vérification automatique à chaque envoi sur GitHub
+- `downloads.html` : projets à télécharger (archives ZIP des dépôts GitHub), liste dans `DOWNLOADS` (`js/projects.js`)
 - `legal.html` : mentions légales (éditeur, hébergement, données, propriété intellectuelle), en EN / FR / EL
 - `css/style.css` : styles (les blocs responsive sont regroupés en fin de fichier, du plus large au plus étroit)
 - `css/fonts.css` : polices hébergées (Inter, Cormorant Garamond), sans requête vers Google

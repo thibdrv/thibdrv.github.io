@@ -185,6 +185,83 @@ const EMAIL = "thibaud.derville@outlook.fr";
 /* Téléphone : affiché dans le CV et dans le pied de page (mets "" pour le masquer partout) */
 const PHONE = "+357 94 11 01 66";
 
+/* Projets à télécharger (page downloads.html, lien depuis la section Projets).
+   Chaque archive ZIP est générée par GitHub à partir de la branche main du dépôt.
+   Pour en ajouter un : copier un bloc, mettre le lien du dépôt et celui du ZIP
+   (https://github.com/thibdrv/NOM_DU_DEPOT/archive/refs/heads/main.zip). */
+const DOWNLOADS = [
+  /* Application avec un choix de système : « files » au lieu de « zip ».
+     « releases/latest » = toujours la dernière version publiée du dépôt (dépôt public requis).
+     Nouvelle version : git tag v1.1 puis git push origin v1.1 (voir le README du dépôt) ;
+     les liens restent valables, mais pense à mettre à jour les tailles ci-dessous. */
+  {
+    slug: "retrieve-job",
+    title: "Retrieve Job",
+    description: {
+      en: "A free desktop app that gathers job offers from 17 job sites and company career pages into one Excel file. Choose your system.",
+      fr: "Une application de bureau gratuite qui rassemble les offres d’emploi de 17 sites et pages carrières d’entreprises dans un seul fichier Excel. Choisissez votre système.",
+      el: "Μια δωρεάν εφαρμογή επιφάνειας εργασίας που συγκεντρώνει αγγελίες από 17 ιστότοπους εργασίας και σελίδες καριέρας εταιρειών σε ένα αρχείο Excel. Επιλέξτε το σύστημά σας."
+    },
+    repo: "https://github.com/thibdrv/Prive_JobR",
+    files: [
+      { id: "windows", label: "Windows", ext: { en: ".zip · 16 MB", fr: ".zip · 16 Mo", el: ".zip · 16 MB" }, url: "https://github.com/thibdrv/Prive_JobR/releases/latest/download/RetrieveJob-windows.zip" },
+      { id: "linux", label: "Linux", ext: { en: ".tar.gz · 29 MB", fr: ".tar.gz · 29 Mo", el: ".tar.gz · 29 MB" }, url: "https://github.com/thibdrv/Prive_JobR/releases/latest/download/RetrieveJob-linux.tar.gz" }
+    ]
+  },
+  {
+    slug: "wildflix",
+    title: { en: "WildFlix, Movie Recommendation", fr: "WildFlix, Recommandation de films", el: "WildFlix, Σύσταση ταινιών" },
+    description: {
+      en: "Notebooks and Streamlit app : data pipeline, exploratory analysis and a TF-IDF recommendation engine.",
+      fr: "Notebooks et application Streamlit : pipeline de données, analyse exploratoire et moteur de recommandation TF-IDF.",
+      el: "Notebooks και εφαρμογή Streamlit : pipeline δεδομένων, διερευνητική ανάλυση και σύστημα σύστασης TF-IDF."
+    },
+    tags: ["Python", "pandas", "Streamlit"],
+    repo: "https://github.com/thibdrv/Recommendation_System",
+    zip: "https://github.com/thibdrv/Recommendation_System/archive/refs/heads/main.zip",
+    size: { en: "≈ 6 MB", fr: "≈ 6 Mo", el: "≈ 6 MB" }
+  },
+  {
+    slug: "toys-and-models",
+    title: { en: "Toys and Models, Executive Dashboard", fr: "Toys and Models, Tableau de bord de direction", el: "Toys and Models, Πίνακας ελέγχου διοίκησης" },
+    description: {
+      en: "Power BI dashboard and pandas analysis of a scale-model retailer.",
+      fr: "Tableau de bord Power BI et analyse pandas d’un détaillant de modèles réduits.",
+      el: "Πίνακας ελέγχου Power BI και ανάλυση pandas για εταιρεία λιανικής μινιατούρων."
+    },
+    tags: ["Power BI", "pandas"],
+    repo: "https://github.com/thibdrv/Analyse_Toys_and_Models",
+    zip: "https://github.com/thibdrv/Analyse_Toys_and_Models/archive/refs/heads/main.zip",
+    size: { en: "≈ 4 MB", fr: "≈ 4 Mo", el: "≈ 4 MB" }
+  },
+  {
+    slug: "data-projects",
+    title: "Data Projects",
+    description: {
+      en: "A collection of data projects : web scraping, API data collection and analysis.",
+      fr: "Une collection de projets data : web scraping, collecte de données via API et analyse.",
+      el: "Μια συλλογή έργων δεδομένων : web scraping, συλλογή δεδομένων μέσω API και ανάλυση."
+    },
+    tags: ["Web scraping", "API", "Python"],
+    repo: "https://github.com/thibdrv/Data_Projects",
+    zip: "https://github.com/thibdrv/Data_Projects/archive/refs/heads/main.zip",
+    size: { en: "< 1 MB", fr: "< 1 Mo", el: "< 1 MB" }
+  },
+  {
+    slug: "web-projects",
+    title: "Web Projects",
+    description: {
+      en: "The source code of five web projects built to solve specific needs.",
+      fr: "Le code source de cinq projets web conçus pour répondre à des besoins précis.",
+      el: "Ο πηγαίος κώδικας πέντε web έργων που σχεδιάστηκαν για συγκεκριμένες ανάγκες."
+    },
+    tags: ["PHP", "JavaScript", "Python"],
+    repo: "https://github.com/thibdrv/Web_Projects",
+    zip: "https://github.com/thibdrv/Web_Projects/archive/refs/heads/main.zip",
+    size: { en: "≈ 98 MB", fr: "≈ 98 Mo", el: "≈ 98 MB" }
+  }
+];
+
 /* Adresse officielle du site : sert au lien imprimé en pied de page du PDF du CV */
 const SITE_URL = "https://thibdrv.github.io/";
 

@@ -469,9 +469,39 @@ html[lang="el"] .hero__title { font-size: clamp(24px, 6.6vw, 112px); }
 }
 .projects-group__title {
   font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.3em;
+  font-size: 15px;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
+}
+
+/* Projets à télécharger : une ligne-lien (même effet que les lignes de contact) vers downloads.html */
+.projects-group--downloads { margin-top: 0; }
+.dl-wrap { border-bottom: 1px solid var(--line); }
+
+/* Page downloads.html : liste simple (titre, une phrase, boutons) */
+.dl-list { margin-top: 48px; border-top: 1px solid var(--line); }
+.dl-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.dl-item__text { flex: 1 1 340px; min-width: 0; }
+.dl-item__title { font-weight: 400; font-size: clamp(20px, 2.2vw, 28px); letter-spacing: -0.01em; line-height: 1.2; }
+.dl-item__desc { margin-top: 8px; max-width: 560px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.dl-item__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.dl-item__buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.dl-item .btn { padding: 14px 22px; }
+.dl-item .btn small { font-size: 10px; letter-spacing: 0.1em; text-transform: none; opacity: 0.6; }
+.dl-item__repo {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 3px;
 }
 .projects-group__desc {
   font-family: var(--serif);
@@ -999,7 +1029,7 @@ a.card:hover .card__mono { transform: scale(1.06); }
   min-height: 100svh;
   justify-content: flex-start;
   gap: 14px;
-  padding: 84px var(--pad) 28px;
+  padding: 76px var(--pad) 28px;
 }
 .hero__card {
   position: relative;
@@ -1010,37 +1040,37 @@ a.card:hover .card__mono { transform: scale(1.06); }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(28px, 4vw, 56px);
-  border-radius: clamp(20px, 2.4vw, 32px);
-  background: #0b0b0b;
-  color: #f4f3ef;
+  /* plus de cadre : on reste sur le beige du site, écriture en noir */
+  padding: clamp(10px, 1.4vw, 18px) 0 clamp(4px, 0.7vw, 10px);
+  background: transparent;
+  color: #0b0b0b;
 }
-/* portrait (noir et blanc, fondu dans le noir) */
+/* portrait (noir et blanc, fondu dans le beige) */
 .hero__photo {
   position: absolute;
   z-index: -2;
-  left: 35%;
+  left: 39%;
   bottom: 0;
   height: 100%;
-  width: 44%;
+  width: 42%;
   object-fit: cover;
   object-position: 50% 8%;
-  filter: grayscale(1) brightness(0.6) contrast(1.45);
+  filter: grayscale(1) brightness(0.96) contrast(1.18);
+  mix-blend-mode: multiply;
   -webkit-mask-image: radial-gradient(ellipse 52% 80% at 50% 38%, #000 28%, transparent 100%);
   mask-image: radial-gradient(ellipse 52% 80% at 50% 38%, #000 28%, transparent 100%);
 }
-/* ombres : à droite (derrière le texte), en bas, sur le côté du visage et autour du portrait */
+/* voiles beiges : derrière le texte (droite et gauche), en bas et en haut, pour fondre le portrait */
 .hero__card::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(270deg, #0b0b0b 0%, rgba(11, 11, 11, 0.8) 22%, rgba(11, 11, 11, 0) 44%),
-    linear-gradient(100deg, rgba(11, 11, 11, 0) 44%, rgba(11, 11, 11, 0.68) 70%),
-    linear-gradient(90deg, rgba(11, 11, 11, 0.88) 0%, rgba(11, 11, 11, 0) 34%),
-    linear-gradient(0deg, #0b0b0b 0%, rgba(11, 11, 11, 0.55) 22%, rgba(11, 11, 11, 0) 46%),
-    linear-gradient(180deg, rgba(11, 11, 11, 0.55) 0%, rgba(11, 11, 11, 0) 22%);
+    linear-gradient(270deg, #f4f3ef 0%, rgba(244, 243, 239, 0.85) 22%, rgba(244, 243, 239, 0) 44%),
+    linear-gradient(90deg, rgba(244, 243, 239, 0.9) 0%, rgba(244, 243, 239, 0) 34%),
+    linear-gradient(0deg, #f4f3ef 0%, rgba(244, 243, 239, 0.6) 22%, rgba(244, 243, 239, 0) 46%),
+    linear-gradient(180deg, rgba(244, 243, 239, 0.6) 0%, rgba(244, 243, 239, 0) 22%);
 }
 
 /* titre à gauche (il chevauche un peu le portrait), texte à droite, comme la référence */
@@ -1050,6 +1080,8 @@ a.card:hover .card__mono { transform: scale(1.06); }
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
   align-items: center;
   gap: 32px;
+  /* remonte légèrement le bloc titre / texte, plus près de la barre de navigation */
+  padding-bottom: clamp(40px, 6.5vw, 84px);
 }
 .hero__content { max-width: none; }
 .hero__aside { justify-self: end; max-width: 300px; }
@@ -1059,11 +1091,12 @@ a.card:hover .card__mono { transform: scale(1.06); }
   font-size: 14px;
   letter-spacing: 0.02em;
   text-transform: none;
-  color: rgba(244, 243, 239, 0.75);
+  font-weight: 600;
+  color: #0b0b0b;
 }
 .hero__card .hero__title {
   font-weight: 500;
-  font-size: clamp(42px, 6.1vw, 100px);
+  font-size: clamp(42px, 5.6vw, 94px);
   line-height: 0.98;
   letter-spacing: -0.04em;
   text-transform: none;
@@ -1072,13 +1105,13 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
 .hero__card .hero__tagline {
   margin-top: clamp(18px, 2vw, 28px);
   font-size: clamp(20px, 2.1vw, 30px);
-  color: rgba(244, 243, 239, 0.78);
+  color: #0b0b0b;
 }
 .hero__card .hero__text {
   margin-top: 18px;
   max-width: 440px;
   font-size: 15px;
-  color: rgba(244, 243, 239, 0.6);
+  color: rgba(11, 11, 11, 0.85);
 }
 
 /* bouton pilule */
@@ -1089,8 +1122,8 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   margin-top: 28px;
   padding: 6px 6px 6px 24px;
   border-radius: 999px;
-  background: #f4f3ef;
-  color: #0b0b0b;
+  background: #0b0b0b;
+  color: #f4f3ef;
   font-size: 13px;
   letter-spacing: 0.04em;
   font-weight: 500;
@@ -1101,8 +1134,8 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #0b0b0b;
-  color: #f4f3ef;
+  background: #f4f3ef;
+  color: #0b0b0b;
   font-size: 18px;
   transition: transform 0.6s var(--ease);
 }
@@ -1117,7 +1150,7 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
 }
 .hero__points li {
   padding-top: 14px;
-  border-top: 1px solid rgba(244, 243, 239, 0.22);
+  border-top: 1px solid rgba(11, 11, 11, 0.2);
   font-size: 14px;
 }
 .hero__points b {
@@ -1126,7 +1159,7 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: rgba(244, 243, 239, 0.68);
+  color: rgba(11, 11, 11, 0.78);
 }
 
 /* badge circulaire dans la carte */
@@ -1136,10 +1169,11 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   display: flex;
   align-items: center;
   gap: clamp(20px, 3vw, 40px);
-  padding: 20px clamp(22px, 3vw, 40px);
-  border-radius: clamp(16px, 2vw, 24px);
-  background: #0b0b0b;
-  color: #f4f3ef;
+  /* plus de cadre : un simple trait fin au-dessus, comme les points clés */
+  padding: 22px 0 6px;
+  border-top: 1px solid rgba(11, 11, 11, 0.2);
+  background: transparent;
+  color: #0b0b0b;
 }
 .hero__stack-label {
   flex: none;
@@ -1148,7 +1182,7 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   letter-spacing: 0.2em;
   text-transform: uppercase;
   line-height: 1.5;
-  color: rgba(244, 243, 239, 0.6);
+  color: #0b0b0b;
 }
 .hero__stack ul {
   display: flex;
@@ -1168,7 +1202,7 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   font-weight: 300;
   font-size: clamp(17px, 1.6vw, 22px);
   letter-spacing: 0;
-  color: rgba(244, 243, 239, 0.6);
+  color: rgba(11, 11, 11, 0.78);
 }
 
 /* ==========================================================================
@@ -1352,13 +1386,21 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
   .cv-doc__head { flex-direction: column-reverse; align-items: flex-start; gap: 16px; }
   .cv-doc__photo { width: 76px; height: 76px; }
 
-  .hero { min-height: auto; padding: 84px var(--pad) 24px; }
-  .hero__card { min-height: 0; padding: 26px 22px 24px; }
-  .hero__photo { left: 0; width: 100%; height: 100%; opacity: 0.42; object-position: 70% 18%; -webkit-mask-image: none; mask-image: none; }
-  .hero__main { display: block; }
+  .hero { min-height: auto; padding: 76px var(--pad) 24px; }
+  .hero__card { min-height: 0; padding: 10px 0 8px; }
+  .hero__photo {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-position: 70% 18%;
+    -webkit-mask-image: radial-gradient(ellipse 62% 56% at 58% 38%, #000 25%, transparent 100%);
+    mask-image: radial-gradient(ellipse 62% 56% at 58% 38%, #000 25%, transparent 100%);
+  }
+  .hero__main { display: block; padding-bottom: 0; }
   .hero__aside { max-width: none; margin-top: 20px; }
   .hero__card::before {
-    background: linear-gradient(0deg, #0b0b0b 0%, rgba(11, 11, 11, 0.55) 55%, rgba(11, 11, 11, 0.7) 100%);
+    background: linear-gradient(0deg, #f4f3ef 0%, rgba(244, 243, 239, 0.7) 55%, rgba(244, 243, 239, 0.82) 100%);
   }
   .hero__content { max-width: 100%; }
   .hero__card .hero__title { font-size: clamp(38px, 11.5vw, 64px); }

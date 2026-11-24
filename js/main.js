@@ -318,6 +318,37 @@
     el.setAttribute("datetime", now.toISOString());
   }
 
+  /* Page downloads.html : liste simple des projets à télécharger (données : DOWNLOADS dans projects.js).
+     Un projet a soit un lien « zip », soit plusieurs « files » au choix (ex. Windows / Linux). */
+  function renderDownloads() {
+    const root = document.getElementById("dl-list");
+    if (!root || typeof DOWNLOADS === "undefined") return;
+    root.innerHTML = DOWNLOADS.map((d, i) => {
+      const slug = esc(d.slug || i);
+      const files = d.files && d.files.length ? d.files : d.zip ? [{ label: t("dl.zip"), url: d.zip, ext: loc(d.size) }] : [];
+      const buttons = files
+        .filter((f) => safeUrl(f.url))
+        .map(
+          (f) =>
+            `<a class="btn" data-track="download-${slug}${f.id ? "-" + esc(f.id) : ""}" href="${esc(safeUrl(f.url))}" rel="noopener noreferrer">` +
+            `<span>${esc(loc(f.label))}</span>${f.ext ? ` <small>${esc(loc(f.ext))}</small>` : ""} <span aria-hidden="true">↓</span></a>`
+        )
+        .join("");
+      const repo = safeUrl(d.repo);
+      return `
+        <li class="dl-item">
+          <div class="dl-item__text">
+            <h2 class="dl-item__title">${esc(loc(d.title))}</h2>
+            <p class="dl-item__desc">${esc(loc(d.description))}</p>
+          </div>
+          <div class="dl-item__actions">
+            <div class="dl-item__buttons">${buttons}</div>
+            ${repo ? `<a class="dl-item__repo" href="${esc(repo)}" target="_blank" rel="noopener noreferrer">${esc(t("dl.repo"))} ↗</a>` : ""}
+          </div>
+        </li>`;
+    }).join("");
+  }
+
   function renderCv() {
     renderCvDocument();
     updatePrintDate();
@@ -392,7 +423,7 @@
     if (!header || !nav || !document.getElementById("accueil")) return;
 
     // section de la page -> lien du menu
-    const MAP = { parcours: "#parcours", qualites: "#parcours", interets: "#parcours", projets: "#projets", collections: "#projets", cv: "cv.html", contact: "#contact" };
+    const MAP = { parcours: "#parcours", qualites: "#parcours", interets: "#parcours", projets: "#projets", collections: "#projets", downloads: "#projets", cv: "cv.html", contact: "#contact" };
     const links = Array.from(nav.querySelectorAll("a"));
     let ticking = false;
 
@@ -401,7 +432,7 @@
       const h = header.offsetHeight;
 
       const midY = h / 2;
-      const dark = Array.from(document.querySelectorAll(".section--dark, .hero__card, .hero__stack, .footer")).some((el) => {
+      const dark = Array.from(document.querySelectorAll(".section--dark, .footer")).some((el) => {
         const r = el.getBoundingClientRect();
         return r.top <= midY && r.bottom > midY;
       });
@@ -470,5 +501,7 @@
   initNavSpy();
   renderCv();
   document.addEventListener("langchange", renderCv);
+  renderDownloads();
+  document.addEventListener("langchange", renderDownloads);
   initReveal();
 })();

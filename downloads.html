@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloadable projects — Thibaud Derville</title>
+  <meta name="description" content="Source code and files of Thibaud Derville's projects, available for download.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f4f3ef">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body data-title-key="dl.meta.title" data-desc-key="dl.meta.description">
+  <a class="skip-link" href="#main" data-i18n="skip.link">Skip to content</a>
+
+  <header class="header" id="header">
+    <a href="index.html" class="logo">THIBAUD DERVILLE</a>
+    <div class="header__menu" id="site-menu">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#projets" class="nav__back"><span aria-hidden="true">←</span> <span data-i18n="cv.back">Back to portfolio</span></a>
+    </nav>
+    <div class="social" id="header-social" role="group" aria-label="Social links"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="el" lang="el" aria-pressed="false">EL</button>
+    </div>
+    </div>
+    <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main id="main" tabindex="-1" class="cv-page">
+    <p class="eyebrow" data-i18n="dl.label">Downloads</p>
+    <h1 class="cv-title" data-i18n="dl.title">Downloadable projects</h1>
+    <p class="cv-lead" data-i18n="dl.lead">The source code and files of my projects, ready to download as ZIP archives.</p>
+
+    <!-- Liste générée depuis DOWNLOADS (js/projects.js) -->
+    <ol class="dl-list" id="dl-list"></ol>
+
+    <p class="cv-hint" data-i18n="dl.note">Archives are served directly by GitHub. Large files may take a moment to download.</p>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year2">2026</span> Thibaud Derville</span>
+    <a href="index.html#projets" data-i18n="cv.back">Back to portfolio</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script data-goatcounter="https://thibauddrv.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
