@@ -14,7 +14,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+html { scroll-behavior: smooth; scroll-padding-top: 60px; }
 /* Garde-fou : jamais de défilement horizontal de la page */
 html, body { max-width: 100%; overflow-x: clip; }
 
@@ -109,7 +109,7 @@ ul, ol { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px var(--pad);
+  padding: 8px var(--pad);
   /* par défaut (sur une partie crème) : barre noire, texte crème */
   --bg: #0b0b0b;
   --ink: #f4f3ef;
@@ -152,7 +152,7 @@ ul, ol { list-style: none; }
   font: inherit;
   font-size: 11px;
   letter-spacing: 0.2em;
-  padding: 8px 9px;
+  padding: 7px 9px;
   cursor: pointer;
   opacity: 0.72;
   border-bottom: 1px solid transparent;
@@ -167,7 +167,7 @@ ul, ol { list-style: none; }
   letter-spacing: 0.24em;
   text-transform: uppercase;
   position: relative;
-  padding: 9px 16px;
+  padding: 8px 16px;
   border-radius: 999px;
   transition: background-color 0.5s var(--ease), color 0.5s var(--ease);
 }
@@ -771,8 +771,8 @@ a.card:hover .card__mono { transform: scale(1.06); }
 .social a {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   opacity: 0.78;
   transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
 }
@@ -1030,7 +1030,7 @@ a.card:hover .card__mono { transform: scale(1.06); }
   min-height: 100svh;
   justify-content: flex-start;
   gap: 14px;
-  padding: 76px var(--pad) 28px;
+  padding: 58px var(--pad) 28px;
 }
 .hero__card {
   position: relative;
@@ -1526,4 +1526,11 @@ html[lang="el"] .hero__card .hero__title { font-size: clamp(30px, 4.4vw, 74px); 
     font-size: 8pt;
     color: #555;
   }
+}
+
+/* Téléphone, page de téléchargement : « View on GitHub » centré sous le bouton de téléchargement */
+@media (max-width: 720px) {
+  .dl-item__repo { align-self: center; }
+  /* boutons de même largeur (Windows / Linux) : le lien reste bien centré sous les deux */
+  .dl-item__buttons { flex-direction: column; align-items: stretch; }
 }
