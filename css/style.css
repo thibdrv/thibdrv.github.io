@@ -497,6 +497,7 @@ html[lang="el"] .hero__title { font-size: clamp(24px, 6.6vw, 112px); }
 .dl-item .btn { padding: 14px 22px; }
 .dl-item .btn small { font-size: 10px; letter-spacing: 0.1em; text-transform: none; opacity: 0.6; }
 .dl-item__repo {
+  align-self: flex-end; /* lien « View on GitHub » aligné à droite, sous les boutons */
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;

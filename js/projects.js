@@ -196,11 +196,15 @@ const DOWNLOADS = [
      les liens restent valables, mais pense à mettre à jour les tailles ci-dessous. */
   {
     slug: "retrieve-job",
-    title: "Retrieve Job",
+    title: {
+      en: "Job Retriever (Latest version)",
+      fr: "Job Retriever (Dernière version)",
+      el: "Job Retriever (Τελευταία έκδοση)"
+    },
     description: {
-      en: "A free desktop app that gathers job offers from 17 job sites and company career pages into one Excel file. Choose your system.",
-      fr: "Une application de bureau gratuite qui rassemble les offres d’emploi de 17 sites et pages carrières d’entreprises dans un seul fichier Excel. Choisissez votre système.",
-      el: "Μια δωρεάν εφαρμογή επιφάνειας εργασίας που συγκεντρώνει αγγελίες από 17 ιστότοπους εργασίας και σελίδες καριέρας εταιρειών σε ένα αρχείο Excel. Επιλέξτε το σύστημά σας."
+      en: "A small Python desktop program that gathers job offers from 17 job sites and company career pages into one Excel file.",
+      fr: "Un petit programme Python de bureau qui rassemble les offres d’emploi de 17 sites et pages carrières d’entreprises dans un seul fichier Excel.",
+      el: "Ένα μικρό πρόγραμμα Python για υπολογιστή που συγκεντρώνει αγγελίες από 17 ιστότοπους εργασίας και σελίδες καριέρας εταιρειών σε ένα αρχείο Excel."
     },
     repo: "https://github.com/thibdrv/Prive_JobR",
     files: [
